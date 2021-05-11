@@ -1,0 +1,38 @@
+User Stories
+
+
+MVP
+——
+As a user I can log in X
+
+As a student I can take tests X
+As a student I can view available tests X
+As a student I can see my grades for tests
+As a student I can see my cumulative grades
+
+As a teacher I can create tests for my students
+As a teacher I can view my students cumulative grades
+As a teacher I can view my students specific test’s grades
+
+
+Probables
+—————
+As an admin I can assign teachers to classes X
+As an admin I can view grades of courses
+As an admin, I can add students and teachers X
+As an admin, I can remove students and teachers
+As an admin, I can view active courses X
+
+As a student I can view the results of tests
+
+
+Stretch
+————
+As a student I can submit homework
+As a student I can study for tests
+As a student I can give test feedback
+
+As a teacher I can assign homework
+As a teacher I can grade homework
+As a teacher I can give feedback
+As a teacher change grades/give points back
