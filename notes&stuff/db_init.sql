@@ -1,9 +1,9 @@
-drop table if exists student_quizes;
+drop table if exists student_quizzes;
 drop table if exists roles;
 drop table if exists users;
 drop table if exists courses;
 drop table if exists student_courses;
-drop table if exists quizes;
+drop table if exists quizzes;
 drop table if exists questions;
 drop table if exists answers;
 
@@ -21,7 +21,7 @@ create table courses(id serial primary key,
 create table student_courses(id serial primary key,
 							  student_id int not null,
 							  course_id int not null);
-create table quizes(id serial primary key,
+create table quizzes(id serial primary key,
 					"name" varchar(50) not null,
 					course_id int not null);
 create table questions(id serial primary key,
@@ -31,7 +31,7 @@ create table answers(id serial primary key,
 					 description varchar(100),
 					 question_id int not null,
 					 is_correct bool not null);
-create table student_quizes(id serial primary key,
+create table student_quizzes(id serial primary key,
 							student_id int not null,
 							quiz_id int not null,
 							percent_correct decimal not null);
@@ -60,7 +60,7 @@ foreign key (course_id)
 references courses(id)
 on delete cascade;
 
-alter table quizes
+alter table quizzes
 add constraint fk_courseQ
 foreign key (course_id)
 references courses(id)
@@ -69,7 +69,7 @@ on delete cascade;
 alter table questions
 add constraint fk_questionquiz
 foreign key (quiz_id)
-references quizes(id)
+references quizzes(id)
 on delete cascade;
 
 alter table answers
@@ -78,14 +78,14 @@ foreign key (question_id)
 references questions(id)
 on delete cascade;
 
-alter table student_quizes
+alter table student_quizzes
 add constraint fk_studentquiz
 foreign key (student_id)
 references users(id)
 on delete cascade;
 
-alter table student_quizes
+alter table student_quizzes
 add constraint fk_quizstudent
 foreign key (quiz_id)
-references quizes(id)
+references quizzes(id)
 on delete cascade;
