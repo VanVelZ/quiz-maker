@@ -15,15 +15,15 @@ drop constraint if exists fk_questionanswer;
 drop table if exists student_questions;
 drop table if exists users;
 drop table if exists student_courses;
-drop table if exists courses;
-drop table if exists quizzes;
-drop table if exists questions;
 drop table if exists answers;
+drop table if exists questions;
+drop table if exists quizzes;
+drop table if exists courses;
 
 create table users (id serial primary key,
 					first_name varchar(50) not null,
 					last_name varchar(50) not null,
-					login_id varchar(10) not null,
+					login_id varchar(10) not null unique,
 					password varchar(50) not null,
 					role_id int not null);
 create table courses(id serial primary key,
@@ -46,6 +46,23 @@ create table student_questions(id serial primary key,
 							student_id int not null,
 							question_id int not null,
 							answer_id int not null);
+
+insert into users values(default, 'Steve', 'Steven', '100000', 'password', 0);
+insert into users values(default, 'Ben', 'Steven', '100001', 'password', 0);
+insert into users values(default, 'George', 'Steven', '100002', 'password', 0);
+insert into users values(default, 'Jeff', 'Steven', '100003', 'password', 0);
+insert into users values(default, 'Beth', 'Steven', '100004', 'password', 0);
+
+insert into users values(default, 'Mister', 'Teacher', '200000', 'password', 1);
+insert into users values(default, 'Miss', 'Teacher', '200001', 'password', 1);
+
+
+insert into courses values(default, 'Physical Science', 6);
+insert into courses values(default, 'Biology', 7);
+
+insert into student_courses values(default, 1, 1);
+insert into student_courses values(default, 2, 1);
+insert into student_courses values(default, 3, 1);
 
 
 alter table courses

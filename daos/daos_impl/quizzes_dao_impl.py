@@ -5,6 +5,7 @@ from util.db_connection import create_connection
 connection = create_connection()
 
 class QuizzesDao(QuizesDAO):
+
     @staticmethod
     def get_all_quizzes_for_course(course_id):
         sql = "Select * from quizzes where course_id=%s"
@@ -28,5 +29,11 @@ class QuizzesDao(QuizesDAO):
         return quiz
 
     @staticmethod
-    def create_quiz(quiz):
-        pass
+    def create_quiz(quiz, commit=True):
+        sql = "insert into quizzes values (default, %s, %s, %s Returning *)"
+        cursor = connection.cursor()
+        cursor.execute(sql, [quiz.id,
+                             quiz.name,
+                             quiz.course_id])
+        connection.commit() if commit else connection.rollback()
+        return True
