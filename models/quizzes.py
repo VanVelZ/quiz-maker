@@ -1,13 +1,17 @@
 class Quizzes:
 
-    def __init__(self, quizzes_id=0, name="", course_id=0):
-        self.quizzes_id = quizzes_id
+    def __init__(self, id=0, name="", course_id=0, questions=None):
+        if questions is None:
+            self.questions = []
+        else:
+            self.questions = questions
+        self.id = id
         self.name = name
         self.course_id = course_id
 
     def json(self):
         return {
-            'quizzesId': self.quizzes_id,
+            'quizzesId': self.id,
             'name': self.name,
             'courseId': self.course_id,
 
