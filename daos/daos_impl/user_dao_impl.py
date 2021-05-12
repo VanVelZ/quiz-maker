@@ -1,4 +1,3 @@
-from flask import request
 from models.users import User
 from util.db_connection import connection
 from daos.user_dao import UserDAO
