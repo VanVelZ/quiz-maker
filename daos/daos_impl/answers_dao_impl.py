@@ -8,7 +8,7 @@ class AnswersDaoImpl(AnswersDAO):
 
     @staticmethod
     def get_all_answers_for_question(question_id):
-        sql = "Select * from quizzes where question_id=%s"
+        sql = "Select * from answers where question_id=%s"
         cursor = connection.cursor()
         cursor.execute(sql, [question_id])
         records = cursor.fetchall()
