@@ -6,14 +6,18 @@ class UserDAOImpl(UserDAO):
 
     @staticmethod
     def create_user(user):  # Create new User
-        sql = "INSERT INTO users VALUES(DEFAULT, %s, %s, %s ) RETURNING *"
+        sql = "INSERT INTO users VALUES(DEFAULT, %s, %s, %s, %s ) RETURNING *"
         cursor = connection.cursor()
-        cursor.execute(sql, [user.first_name,  user.last_name, user.login_id, user.password])
+        cursor.execute(sql, [user.first_name,  user.last_name, user.login_id, user.password, user.role_id])
         connection.commit()
         record = cursor.fetchone()
 
-        return Employee(
-            User(record[0], record[1], record[2], record[3], record[4]).json())
+        return Users(users_id=record[0],
+                     first_name=record[1],
+                     last_name=record[2],
+                     login_id=record[3],
+                     password=record[4],
+                     role_id=record[5])
 
     @staticmethod
     def get_all_users():  # Retrieve all User from User and return
@@ -23,7 +27,7 @@ class UserDAOImpl(UserDAO):
         records = cursor.fetchall()
         user_list = []
         for record in records:
-            users = User(record[0], record[1], record[2], record[3], record[4], record[5])
+            users = Users(record[0], record[1], record[2], record[3], record[4], record[5])
             user_list.append(users.json())
         return user_list
 
