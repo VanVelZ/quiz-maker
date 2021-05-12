@@ -10,8 +10,6 @@ drop constraint if exists fk_courseQ;
 alter table if exists answers
 drop constraint if exists fk_questionanswer;
 
-
-
 drop table if exists student_questions;
 drop table if exists users;
 drop table if exists student_courses;
