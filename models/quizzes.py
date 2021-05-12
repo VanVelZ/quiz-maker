@@ -20,7 +20,7 @@ class Quizzes:
     @staticmethod
     def json_parse(json):
         quizzes = Quizzes()
-        quizzes.quizzes_id = json["quizzesId"]
+        quizzes.id = json["quizzesId"]
         quizzes.name = json["name"]
         quizzes.course_id = json["courseId"]
 

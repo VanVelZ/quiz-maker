@@ -1,16 +1,14 @@
 class Answers:
 
-    def __init__(self, answers_id=0, description="", question_id=0, is_correct=True):
-        self.answers_id = answers_id
+    def __init__(self, id=0, description="", is_correct=True):
+        self.id = id
         self.description = description
-        self.question_id = question_id
         self.is_correct = is_correct
 
     def json(self):
         return {
-            'answersId': self.answers_id,
+            'answersId': self.id,
             'description': self.description,
-            'questionId': self.question_id,
             'isCorrect': self.is_correct,
 
         }
@@ -18,9 +16,8 @@ class Answers:
     @staticmethod
     def json_parse(json):
         answers = Answers()
-        answers.answers_id = json["answersId"]
+        answers.id = json["answersId"]
         answers.description = json["description"]
-        answers.question_id = json["questionId"]
         answers.is_correct = json["isCorrect"]
 
         return answers
