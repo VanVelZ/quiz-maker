@@ -23,8 +23,8 @@ class AnswersDaoImpl(AnswersDAO):
     def create_answer(answer, question_id, commit=True):
         sql = "insert into answers values (default, %s, %s, %s)"
         cursor = connection.cursor()
-        cursor.execute(sql, [answer.id,
-                             answer.description,
-                             question_id])
+        cursor.execute(sql, [answer.description,
+                             question_id,
+                             answer.is_correct])
         connection.commit() if commit else connection.rollback()
         return True

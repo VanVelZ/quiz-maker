@@ -30,10 +30,12 @@ class QuizzesDao(QuizesDAO):
 
     @staticmethod
     def create_quiz(quiz, commit=True):
-        sql = "insert into quizzes values (default, %s, %s, %s Returning *)"
+        sql = "insert into quizzes values (default, %s, %s) Returning *"
         cursor = connection.cursor()
-        cursor.execute(sql, [quiz.id,
-                             quiz.name,
+        cursor.execute(sql, [quiz.name,
                              quiz.course_id])
         connection.commit() if commit else connection.rollback()
         return True
+
+if __name__ == '__main__':
+    print(QuizzesDao.create_quiz(Quizzes(name="New Quiz")))
