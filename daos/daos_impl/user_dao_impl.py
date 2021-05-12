@@ -2,13 +2,14 @@ from models.users import Users
 from util.db_connection import connection
 from daos.user_dao import UserDAO
 
+
 class UserDAOImpl(UserDAO):
 
     @staticmethod
     def create_user(user):  # Create new User
         sql = "INSERT INTO users VALUES(DEFAULT, %s, %s, %s, %s ) RETURNING *"
         cursor = connection.cursor()
-        cursor.execute(sql, [user.first_name,  user.last_name, user.login_id, user.password, user.role_id])
+        cursor.execute(sql, [user.first_name, user.last_name, user.login_id, user.password, user.role_id])
         connection.commit()
         record = cursor.fetchone()
 
@@ -31,9 +32,31 @@ class UserDAOImpl(UserDAO):
             user_list.append(users.json())
         return user_list
 
+    def update_user(self, change):  # Update user Table
 
-    ## for branch test only
+        sql = "UPDATE users SET first_name = %s, last_name=%s, password=%s  WHERE id=%s RETURNING *"
+        cursor = connection.cursor()
+        cursor.execute(sql,
+                       (change.first_name,
+                        change.last_name,
+                        change.password))
+        connection.commit()
+        record = cursor.fetchone()
+        return Users(record[0], record[1], record[2], record[3])
 
+    def delete_user(self, userid):  # Delete an  Employee  from Table
+        sql = "DELETE FROM users WHERE id =%s"
+        cursor = connection.cursor()
+        cursor.execute(sql, [userid])
+        connection.commit()
 
+    # ----------- Testing section -------------
+    def _test(self):
+        pass
+        user = UserDAO()
+        users = user.get_all_users()
 
+        print(users)
 
+    if __name__ == '__main__':
+        _test()
