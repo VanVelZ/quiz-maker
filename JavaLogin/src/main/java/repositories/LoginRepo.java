@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class LoginRepo {
     public static Connection conn = JDBC.getConnection();
 
-    public int getMovie(String loginId, String password) {
+    public int userLogin(String loginId, String password) {
         try {
             String sql = "SELECT id FROM users WHERE login_id = ? and password = ?";
 
