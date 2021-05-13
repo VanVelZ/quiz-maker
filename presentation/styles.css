@@ -3,18 +3,25 @@ Color Pallete        #defcf9 #cadefc  #c3bef0  #cca8e9
 */
 
 
+.exampleColor {
+  color: #defcf9;
+  border-color: #cadefc;
+  background-color: #c3bef0;
+  border-color: #cca8e9;
+}
+
 body {
     height: 100vh;
-    background-color:  #769beb;
+    background-color:  #cadefc;
   }
   
   h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #222F53;
+    color: #cca8e9;
     border: 5px;
-    border-color: #4B919E;
+    border-color: #4cca8e9;
   }
   
   div{
