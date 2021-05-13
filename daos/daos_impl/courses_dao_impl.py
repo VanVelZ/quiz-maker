@@ -3,7 +3,7 @@ from daos.courses_dao import CoursesDAO
 from util.db_connection import connection
 
 
-class CoursesDao(CoursesDAO):
+class CoursesDaoImpl(CoursesDAO):
     @staticmethod
     def get_all_courses():
         sql = "Select * from courses"
