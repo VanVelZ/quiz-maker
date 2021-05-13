@@ -1,6 +1,6 @@
 # Project2
 
-This Application is teachers to develop tests for their students to take and review.  A student can then evaluate what they got incorrect and study while the teacher can veiw who needs help where.
+This Application allows teachers to develop tests for their students to take and review.  A student can then evaluate what they got incorrect and study while the teacher can veiw who needs help where.
 
 User Stories:
 As a user I can log in and out
