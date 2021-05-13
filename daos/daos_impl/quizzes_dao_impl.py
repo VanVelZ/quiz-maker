@@ -1,10 +1,12 @@
+from daos.daos_impl.questions_dao_impl import QuestionDaoImpl
 from daos.quizzes_dao import QuizesDAO
 from models.quizzes import Quizzes
 from util.db_connection import create_connection
 
 connection = create_connection()
 
-class QuizzesDao(QuizesDAO):
+class QuizzesDaoImpl(QuizesDAO):
+
     @staticmethod
     def get_all_quizzes_for_course(course_id):
         sql = "Select * from quizzes where course_id=%s"
@@ -15,6 +17,7 @@ class QuizzesDao(QuizesDAO):
 
         for record in records:
             quiz = Quizzes(id=record[0], name=record[1], course_id=record[2])
+            quiz.questions = QuestionDaoImpl.get_all_questions_for_quiz(quiz.id)
             quizzes.append(quiz)
         return quizzes
 
@@ -25,8 +28,21 @@ class QuizzesDao(QuizesDAO):
         cursor.execute(sql, [quiz_id])
         record = cursor.fetchone()
         quiz = Quizzes(id=record[0], name=record[1], course_id=record[2])
+        quiz.questions = QuestionDaoImpl.get_all_questions_for_quiz(quiz.id)
         return quiz
 
     @staticmethod
-    def create_quiz(quiz):
-        pass
+    def create_quiz(quiz, commit=True):
+        sql = "insert into quizzes values (default, %s, %s) Returning id"
+        cursor = connection.cursor()
+        cursor.execute(sql, [quiz.name,
+                             quiz.course_id])
+        id = cursor.fetchone()
+        for question in quiz.questions:
+            QuestionDaoImpl.create_question(question, quiz.id)
+        connection.commit() if commit else connection.rollback()
+        return True
+
+
+if __name__ == '__main__':
+    print(QuizzesDaoImpl.create_quiz(Quizzes(name="New Quiz")))
