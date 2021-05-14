@@ -1,8 +1,8 @@
-from daos.daos_impl.courses_dao_impl import CoursesDAOImpl
+from daos.daos_impl.courses_dao_impl import CoursesDaoImpl
 
 
 class CoursesServices:
-    courses_dao = CoursesDAOImpl()
+    courses_dao = CoursesDaoImpl()
 
     @classmethod
     def get_all_courses(cls):
