@@ -14,7 +14,7 @@ class Quizzes:
             'quizzesId': self.id,
             'name': self.name,
             'courseId': self.course_id,
-
+            'questions': self._convert_questions_to_json()
         }
 
     @staticmethod
@@ -22,6 +22,11 @@ class Quizzes:
         quizzes = Quizzes()
         quizzes.id = json["quizzesId"]
         quizzes.name = json["name"]
-        quizzes.course_id = json["courseId"]
 
         return quizzes
+
+    def _convert_questions_to_json(self):
+        question_as_json = []
+        for question in self.questions:
+            question_as_json.append(question.json())
+        return question_as_json

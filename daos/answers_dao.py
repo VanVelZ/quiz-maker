@@ -3,6 +3,10 @@ from abc import abstractmethod, ABC
 
 class AnswersDAO(ABC):
 
+    def get_all_answers_for_question(question_id):
+        pass
+
+    @staticmethod
     @abstractmethod
-    def get_all_answers(self):
+    def create_answer(answer, question_id):
         pass

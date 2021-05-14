@@ -1,3 +1,4 @@
 .DS_Store
-util/db_connection.py
-venv/
+./util/db_connection.py
+./venv/
+.idea

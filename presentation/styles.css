@@ -1,15 +1,34 @@
+/* 
+Color Pallete        #defcf9 #cadefc  #c3bef0  #cca8e9
+*/
+
+
+.exampleColor {
+  color: #defcf9;
+  border-color: #cadefc;
+  background-color: #c3bef0;
+  border-color: #cca8e9;
+}
+
 body {
     height: 100vh;
-    background-color:  #769beb;
+    background-color:  #defcf9;
   }
   
   h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #222F53;
+    color: #defcf9;
     border: 5px;
-    border-color: #4B919E;
+    background-color: #cca8e9;
+    font-weight: bold;
+    margin-bottom: 0ch;
+  }
+
+  h6 {
+    background-color: #cca8e9;
+    margin-top: 0ch;
   }
   
   div{
@@ -18,7 +37,7 @@ body {
   }
   
   .container {
-      
+    background-color: #c3bef0;
   }
   
   

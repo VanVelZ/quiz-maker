@@ -2,9 +2,9 @@ class Questions:
 
     def __init__(self, id=0, description="", answers=None):
         if answers is None:
-            answers = []
+            self.answers = []
         else:
-            answers = answers
+            self.answers = answers
         self.id = id
         self.description = description
 
@@ -12,7 +12,7 @@ class Questions:
         return {
             'questionsId': self.id,
             'description': self.description,
-
+            'answers': self._convert_answers_to_json()
         }
 
     @staticmethod
@@ -22,3 +22,10 @@ class Questions:
         questions.description = json["description"]
 
         return questions
+
+    def _convert_answers_to_json(self):
+        answers_as_json = []
+        for answer in self.answers:
+            answers_as_json.append(answer.json())
+        return answers_as_json
+
