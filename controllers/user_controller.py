@@ -2,6 +2,7 @@
 # ---------------- Create a new user and return 201 status code for successful creation ----------------------
 from flask import request, jsonify
 
+from exceptions.resource_not_found import ResourceNotFound
 from models.users import Users
 from service.user_services import UserService
 
@@ -28,8 +29,8 @@ def route(app):
             return jsonify(user.json()), 200
         except ValueError as e:
             return "Not a valid ID or No such user exist with this ID", 400  # Bad Request
-        # except ResourceNotFound as r:
-        #     return r.message, 404
+        except ResourceNotFound as r:
+            return r.message, 404
 
     # ---------------- Update a Employee  with an ID and return 200 status for a successful Update  or 404 ----------------------
     @app.route("/user/<userid>", methods=['PUT'])
@@ -41,8 +42,8 @@ def route(app):
             return jsonify(user.json()), 200
         except ValueError as e:
             return "Not a valid ID or No such user exist with this ID", 400  # Bad Request
-        # except ResourceNotFound as r:
-        #     return r.message, 404
+        except ResourceNotFound as r:
+            return r.message, 404
 
     # -------------delete with id -----------------
     @app.route("/user/<userid>", methods=['DELETE'])
@@ -52,5 +53,5 @@ def route(app):
             return f'User with id of  {userid} has been deleted', 204
         except ValueError as e:
             return "Not a valid ID or No such user exist with this ID", 400  # Bad Request
-        # except ResourceNotFound as r:
-        #     return r.message, 404
+        except ResourceNotFound as r:
+            return r.message, 404

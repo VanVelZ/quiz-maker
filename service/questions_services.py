@@ -1,7 +1,7 @@
 from daos.daos_impl.questions_dao_impl import QuestionsDAOImpl
 
 
-class QuestionsService:
+class QuestionsServices:
     questions_dao = QuestionsDAOImpl()
 
     @classmethod

@@ -1,7 +1,7 @@
 from daos.daos_impl.student_course_dao_impl import StudentCourseDaoImpl
 
 
-class StudentCourses_services:
+class StudentCourseServices:
     studentcourse_dao = StudentCourseDaoImpl()
 
     @classmethod

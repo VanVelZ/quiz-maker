@@ -6,16 +6,6 @@ from util.db_connection import connection
 
 class StudentCourseDaoImpl(StudentCoursesDAO):
 
-    def get_courses_by_id(self,  courseid):
-        sql = "SELECT * FROM student_courses where id=%s"
-        cursor = connection.cursor()
-        cursor.execute(sql)
-        record = cursor.fetchone()
-
-        if record:
-            return StudentCourses(record[0], record[1], record[2])
-        else:
-            raise ResourceNotFound(f"Student course id: {courseid} - Not Found")
 
     @staticmethod
     def get_all_student_courses():  # retrieve all student courses
@@ -28,4 +18,15 @@ class StudentCourseDaoImpl(StudentCoursesDAO):
             student_courses = StudentCourses(record[0], record[1], record[2])
             studentcourses_list.append(student_courses.json())
         return studentcourses_list
+
+    def get_courses_by_id(self,  courseid):
+        sql = "SELECT * FROM student_courses where id=%s"
+        cursor = connection.cursor()
+        cursor.execute(sql)
+        record = cursor.fetchone()
+
+        if record:
+            return StudentCourses(record[0], record[1], record[2])
+        else:
+            raise ResourceNotFound(f"Student course id: {courseid} - Not Found")
 

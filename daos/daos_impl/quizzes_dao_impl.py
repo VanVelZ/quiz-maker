@@ -4,6 +4,7 @@ from util.db_connection import create_connection
 
 connection = create_connection()
 
+
 class QuizzesDao(QuizesDAO):
     @staticmethod
     def get_all_quizzes_for_course(course_id):
