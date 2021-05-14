@@ -9,5 +9,5 @@ class CoursesServices:
         return cls.courses_dao.get_all_courses()
 
     @classmethod
-    def get_all_courses_by_id(cls, courseid):
+    def get_course_id(cls, courseid):
         return cls.courses_dao.get_course_id(courseid)

@@ -13,4 +13,4 @@ def route(app):
 
     @app.route("/courses/<courseid>", methods=['GET'])
     def get_all_courses_byid(courseid):
-        return jsonify(CoursesServices.get_all_courses_by_id(courseid)), 200
+        return jsonify(CoursesServices.get_course_id(courseid)), 200
