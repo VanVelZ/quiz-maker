@@ -33,14 +33,14 @@ class QuizzesDaoImpl(QuizesDAO):
 
     @staticmethod
     def create_quiz(quiz, commit=True):
-        sql = "insert into quizzes values (default, %s, %s) Returning id"
+        sql = "insert into quizzes values (default, %s, %s) Returning *"
         cursor = connection.cursor()
         cursor.execute(sql, [quiz.name,
                              quiz.course_id])
-        id = cursor.fetchone()
-        for question in quiz.questions:
-            QuestionDaoImpl.create_question(question, quiz.id)
+        id = cursor.fetchone()[0]
         connection.commit() if commit else connection.rollback()
+        for question in quiz.questions:
+            QuestionDaoImpl.create_question(question, id)
         return True
 
 

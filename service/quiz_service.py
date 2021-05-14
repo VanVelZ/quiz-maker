@@ -14,4 +14,4 @@ class QuizService:
 
     @staticmethod
     def create_quiz(quiz: Quizzes):
-        return QuizService.create_quiz(quiz)
+        return QuizzesDaoImpl.create_quiz(quiz)

@@ -1,3 +1,6 @@
+from models.answers import Answers
+
+
 class Questions:
 
     def __init__(self, id=0, description="", answers=None):
@@ -20,7 +23,7 @@ class Questions:
         questions = Questions()
         questions.id = json["questionsId"]
         questions.description = json["description"]
-
+        questions.answers = map(Answers.json_parse, json["answers"])
         return questions
 
     def _convert_answers_to_json(self):

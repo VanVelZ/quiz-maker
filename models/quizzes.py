@@ -1,3 +1,6 @@
+from models.questions import Questions
+
+
 class Quizzes:
 
     def __init__(self, id=0, name="", course_id=0, questions=None):
@@ -22,6 +25,8 @@ class Quizzes:
         quizzes = Quizzes()
         quizzes.id = json["quizzesId"]
         quizzes.name = json["name"]
+        quizzes.course_id = json["courseId"]
+        quizzes.questions = map(Questions.json_parse, json["questions"])
 
         return quizzes
 
