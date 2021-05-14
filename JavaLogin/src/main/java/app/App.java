@@ -18,7 +18,7 @@ public class App {
     public static void establishRoutes(Javalin app) {
         LoginRepo lr = new LoginRepo();
         LoginController lc = new LoginController(lr);
-        app.get("/login", lc.login);
+        app.post("/login", lc.login);
 
     }
 

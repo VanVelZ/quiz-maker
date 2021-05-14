@@ -2,24 +2,23 @@ package controllers;
 
 import com.google.gson.Gson;
 import io.javalin.http.Handler;
+import models.Login;
+import models.User;
 import repositories.LoginRepo;
 
 public class LoginController {
 
     private LoginRepo lr;
-    private Gson gson = new Gson();
+    private final Gson gson = new Gson();
 
     public LoginController(LoginRepo loginRepo) {
         this.lr = loginRepo;
     }
 
     public Handler login = (context) -> {
-        String loginId = context.pathParam("loginId");
-        String password = context.pathParam("password");
-        int id = lr.userLogin(loginId, password);
-        context.result(gson.toJson(id));
+        Login login = gson.fromJson(context.body(), Login.class);
+        User user = new User(lr.userLogin(login.loginId, login.password));
+        context.result(gson.toJson(user));
     };
-
-
 }
 
