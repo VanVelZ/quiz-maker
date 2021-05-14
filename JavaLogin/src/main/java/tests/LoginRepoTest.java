@@ -11,7 +11,7 @@ public class LoginRepoTest {
     public void loginTest(){
         LoginRepo lr = new LoginRepo();
 
-        User user = new User(lr.userLogin("100000", "password"));
+        User user = lr.userLogin("100000", "password");
 
         Assert.assertEquals(user.userId, 1);
     }
