@@ -24,3 +24,22 @@ class CoursesDaoImpl(CoursesDAO):
         record = cursor.fetchone()
         course = Courses(record[0], record[1], record[2])
         return course
+
+        # commenting this out for now until getting the other daos impl from main/merge
+
+    # @staticmethod
+    # def get_courses_by_teacher_id(teacher_id):
+    #     sql = "SELECT * FROM courses WHERE teacher_id=%s"
+    #     cursor = connection.cursor()
+    #     cursor.execute(sql, [teacher_id])
+    #     records = cursor.fetchall()
+    #     courses = []
+
+    #     for record in records:
+    #         course: Courses = Courses(record[0], record[1], record[2])
+    # -------------------------------------PARTICULARY THIS LINE
+    #         course.teacher_id = CoursesDaoImpl.get_courses_by_teacher_id(
+    #             teacher_id)
+    # ------------------------------------
+    #         courses.append(course)
+    #     return courses
