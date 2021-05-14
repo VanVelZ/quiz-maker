@@ -12,16 +12,23 @@ Color Pallete        #defcf9 #cadefc  #c3bef0  #cca8e9
 
 body {
     height: 100vh;
-    background-color:  #cadefc;
+    background-color:  #defcf9;
   }
   
   h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #cca8e9;
+    color: #defcf9;
     border: 5px;
-    border-color: #4cca8e9;
+    background-color: #cca8e9;
+    font-weight: bold;
+    margin-bottom: 0ch;
+  }
+
+  h6 {
+    background-color: #cca8e9;
+    margin-top: 0ch;
   }
   
   div{
@@ -30,7 +37,7 @@ body {
   }
   
   .container {
-      
+    background-color: #c3bef0;
   }
   
   
