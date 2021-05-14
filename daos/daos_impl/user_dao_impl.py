@@ -1,3 +1,4 @@
+from exceptions.resource_not_found import ResourceNotFound
 from models.users import Users
 from util.db_connection import connection
 from daos.user_dao import UserDAO
@@ -28,9 +29,26 @@ class UserDAOImpl(UserDAO):
         records = cursor.fetchall()
         user_list = []
         for record in records:
-            users = Users(record[0], record[1], record[2], record[3], record[4], record[5])
+            users = Users(record[0],
+                          record[1],
+                          record[2],
+                          record[3],
+                          record[4],
+                          record[5])
             user_list.append(users.json())
         return user_list
+
+    @staticmethod
+    def get_users_by_id(userid):  # Retrieve  User  by ID from users and return
+        sql = "SELECT * FROM users where id=%s"
+        cursor = connection.cursor()
+        cursor.execute(sql)
+        record = cursor.fetchone()
+
+        if record:
+            return Users(record[0], record[1], record[2], record[3], record[4], record[5])
+        else:
+            raise ResourceNotFound(f"User with id: {userid} - Not Found")
 
     def update_user(self, change):  # Update user Table
 

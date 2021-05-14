@@ -1,31 +1,24 @@
-
 from abc import abstractmethod, ABC
 
 
 class UserDAO(ABC):
 
-    @staticmethod
     @abstractmethod
-    def create_user(user):
+    def create_user(self, user):
         pass
 
-    @staticmethod
     @abstractmethod
-    def get_all_users():
+    def get_all_users(self):
         pass
 
-    @staticmethod
     @abstractmethod
-    def get_user_by_id(userid):
+    def get_user_by_id(self, userid):
         pass
 
-    @staticmethod
     @abstractmethod
-    def update_user(change, userid):
+    def update_user(self, change, userid):
         pass
 
-    @staticmethod
     @abstractmethod
-    def delete_user(userid):
+    def delete_user(self, userid):
         pass
-
