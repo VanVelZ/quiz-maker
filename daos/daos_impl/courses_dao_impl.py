@@ -1,7 +1,7 @@
-from models.courses import Courses
-from daos.courses_dao import CoursesDAO
-from util.db_connection import connection
 
+from daos.courses_dao import CoursesDAO
+from models.courses import Courses
+from util.db_connection import connection
 
 class CoursesDaoImpl(CoursesDAO):
     @staticmethod
@@ -18,12 +18,14 @@ class CoursesDaoImpl(CoursesDAO):
 
     @staticmethod
     def get_course_by_id(course_id):
+
         sql = "Select * from courses where id=%s"
         cursor = connection.cursor()
         cursor.execute(sql, [course_id])
         record = cursor.fetchone()
         course = Courses(record[0], record[1], record[2])
         return course
+
 
         # commenting this out for now until getting the other daos impl from main/merge
 
@@ -43,3 +45,4 @@ class CoursesDaoImpl(CoursesDAO):
     # ------------------------------------
     #         courses.append(course)
     #     return courses
+

@@ -6,7 +6,7 @@ from util.db_connection import create_connection
 connection = create_connection()
 
 class QuizzesDaoImpl(QuizesDAO):
-
+  
     @staticmethod
     def get_all_quizzes_for_course(course_id):
         sql = "Select * from quizzes where course_id=%s"
