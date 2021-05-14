@@ -30,19 +30,45 @@ body {
     background-color: #cca8e9;
     margin-top: 0ch;
   }
+
+  h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #defcf9;
+    border: 5px;
+    background-color: #cca8e9;
+    font-weight: bold;
+  }
   
-  div{
+  /* div{
   height: 35px;
   font-size: 16px;
-  }
+  } */
   
   .container {
     background-color: #c3bef0;
+    padding: 6px;
+    margin: 10px;
   }
 
   .navnav {
     position: fixed; 
     bottom: 0;
   }
+
+  table { 
+    padding: 6px; 
+    border: 1px solid #ccc; 
+    text-align: left;
+    margin: 10px;
+  }
+
+  .dataName {
+    width: 300px;
+  }
   
+  input[type=text] {
+    width: 280px;
+  }
   
