@@ -2,3 +2,4 @@
 ./util/db_connection.py
 ./venv/
 ./.idea
+./.vscode
