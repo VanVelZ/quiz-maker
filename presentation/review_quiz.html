@@ -13,7 +13,31 @@
 <body>
     <h1>Quiz Maker</h1>
     <h6><button id="logoutButton" onclick="logout()">Sign Out</button></h6>
+
+    <div id="studentTable" div="container">
+        <table class="table table-striped table-bordered table-hover">
+            <tr>
+                <td>Student Name & Id</th>
+                <td id="studentName">-</th>
+                <td id="studentId">-</th>
+            </tr>
+            <tr>
+                <td>Class</td>
+                <td id="classes">-</td>
+            </tr>
+        </table>
+    </div>
     
+
+
+    <div>
+        <input type=button onclick="location.href='file:///Users/alexjones/Desktop/RevatureTraining/Project2/presentation/index.html'" value="Home">
+        <input type=button onclick="location.href='file:///Users/alexjones/Desktop/RevatureTraining/Project2/presentation/make_quiz.html'" value="Make Quiz">
+        <input type=button onclick="location.href='file:///Users/alexjones/Desktop/RevatureTraining/Project2/presentation/review_quiz.html'" value="Review Quiz">
+        <input type=button onclick="location.href='file:///Users/alexjones/Desktop/RevatureTraining/Project2/presentation/student_quizzes.html'" value="StudentPage">
+        <input type=button onclick="location.href='file:///Users/alexjones/Desktop/RevatureTraining/Project2/presentation/take_quiz.html'" value="Take Quiz">
+        <input type=button onclick="location.href='file:///Users/alexjones/Desktop/RevatureTraining/Project2/presentation/teacher_quizzes.html'" value="TeacherPage">
+      </div>
 </body>
 <script src="scripts/review_quiz.js"></script>
 </html>
