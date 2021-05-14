@@ -39,5 +39,10 @@ body {
   .container {
     background-color: #c3bef0;
   }
+
+  .navnav {
+    position: fixed; 
+    bottom: 0;
+  }
   
   
