@@ -17,7 +17,7 @@ class Questions:
             'questionsId': self.id,
             'description': self.description,
             'answers': self._convert_answers_to_json(),
-            'studentAnswer': self.students_answer
+            'studentsAnswer': self.students_answer.json()
         }
 
     @staticmethod
@@ -26,7 +26,10 @@ class Questions:
         questions.id = json["questionsId"]
         questions.description = json["description"]
         questions.answers = map(Answers.json_parse, json["answers"])
-        questions.students_answer = json["studentAnswer"]
+        try:
+            questions.students_answer = Answers.json_parse(json["studentsAnswer"])
+        except KeyError:
+            questions.students_answer = None
         return questions
 
     def _convert_answers_to_json(self):

@@ -46,7 +46,7 @@ class QuizzesDaoImpl(QuizesDAO):
 
     @staticmethod
     def get_quiz_review(quiz_id, user_id):
-        quiz = QuizesDAO.get_quiz(quiz_id)
+        quiz = QuizzesDaoImpl.get_quiz(quiz_id)
         for question in quiz.questions:
             question.students_answer = AnswersDaoImpl.get_students_answer(question.id, user_id)
         return quiz

@@ -40,10 +40,9 @@ class AnswersDaoImpl(AnswersDAO):
         return answer
 
     @staticmethod
-    def get_students_answer(question, student_id):
+    def get_students_answer(question_id, student_id):
         sql = "select answer_id from student_questions where question_id = %s and student_id = %s"
         cursor = connection.cursor()
-        cursor.execute(sql, [question.id, student_id])
+        cursor.execute(sql, [question_id, student_id])
         id = cursor.fetchone()
-        question.students_answer = AnswersDaoImpl.get_answer(id)
-        return question.students_answer
+        return AnswersDaoImpl.get_answer(id)
