@@ -33,3 +33,15 @@ class QuestionDaoImpl(QuestionsDAO):
         for answer in question.answers:
             AnswersDaoImpl.create_answer(answer, id)
         return True
+
+    @staticmethod
+    def submit_question(question:Questions, user_id, commit=True):
+        sql = "insert into student_questions values (default, %s, %s, %s)"
+        cursor = connection.cursor()
+        cursor.execute(sql, [user_id,
+                             question.id,
+                             question.students_answer.id])
+        connection.commit() if commit else connection.rollback()
+        return True
+
+

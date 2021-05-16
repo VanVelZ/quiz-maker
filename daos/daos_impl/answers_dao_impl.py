@@ -28,3 +28,22 @@ class AnswersDaoImpl(AnswersDAO):
                              answer.is_correct])
         connection.commit() if commit else connection.rollback()
         return True
+
+    @staticmethod
+    def get_answer(id):
+        sql = "Select * from answers where id=%s"
+        cursor = connection.cursor()
+        cursor.execute(sql, [id])
+        record = cursor.fetchone()
+
+        answer = Answers(id=record[0], description=record[1], is_correct=record[3])
+        return answer
+
+    @staticmethod
+    def get_students_answer(question, student_id):
+        sql = "select answer_id from student_questions where question_id = %s and student_id = %s"
+        cursor = connection.cursor()
+        cursor.execute(sql, [question.id, student_id])
+        id = cursor.fetchone()
+        question.students_answer = AnswersDaoImpl.get_answer(id)
+        return question.students_answer
