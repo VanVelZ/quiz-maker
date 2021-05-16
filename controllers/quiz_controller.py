@@ -17,3 +17,12 @@ def route(app):
             return "You did it!", 200
         else:
             return "Oops"
+
+    @app.route("/quizzes/<student_id>/", methods=["PUT", "POST"])
+    def submit_quiz(student_id):
+        quiz = Quizzes.json_parse(request.json)
+        return jsonify(QuizService.submit_quiz(quiz, student_id))
+
+    @app.route("/quizzes/<quiz_id>/<student_id>/", methods=["GET"])
+    def get_quiz_review(quiz_id, student_id):
+        return jsonify(QuizService.get_quiz_review(quiz_id, student_id))

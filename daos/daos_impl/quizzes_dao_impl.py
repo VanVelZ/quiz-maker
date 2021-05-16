@@ -51,6 +51,12 @@ class QuizzesDaoImpl(QuizesDAO):
             question.students_answer = AnswersDaoImpl.get_students_answer(question.id, user_id)
         return quiz
 
+    @staticmethod
+    def submit_quiz(quiz, student_id):
+        for question in quiz.questions:
+            QuestionDaoImpl.submit_question(question, student_id)
+        return QuizzesDaoImpl.get_quiz_review(quiz.id, student_id)
+
 
 if __name__ == '__main__':
     print(QuizzesDaoImpl.create_quiz(Quizzes(name="New Quiz")))
