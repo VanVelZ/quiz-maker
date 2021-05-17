@@ -1,3 +1,4 @@
+from daos.daos_impl.answers_dao_impl import AnswersDaoImpl
 from daos.daos_impl.questions_dao_impl import QuestionDaoImpl
 from daos.quizzes_dao import QuizesDAO
 from models.quizzes import Quizzes
@@ -42,6 +43,19 @@ class QuizzesDaoImpl(QuizesDAO):
         for question in quiz.questions:
             QuestionDaoImpl.create_question(question, id)
         return True
+
+    @staticmethod
+    def get_quiz_review(quiz_id, user_id):
+        quiz = QuizzesDaoImpl.get_quiz(quiz_id)
+        for question in quiz.questions:
+            question.students_answer = AnswersDaoImpl.get_students_answer(question.id, user_id)
+        return quiz
+
+    @staticmethod
+    def submit_quiz(quiz, student_id):
+        for question in quiz.questions:
+            QuestionDaoImpl.submit_question(question, student_id)
+        return QuizzesDaoImpl.get_quiz_review(quiz.id, student_id)
 
 
 if __name__ == '__main__':

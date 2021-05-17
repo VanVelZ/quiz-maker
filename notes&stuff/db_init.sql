@@ -62,6 +62,12 @@ insert into student_courses values(default, 1, 1);
 insert into student_courses values(default, 2, 1);
 insert into student_courses values(default, 3, 1);
 
+INSERT INTO quizzes values(default, 'Light Quiz', 1);
+insert into questions values(default, 1, 'What is the speed of light?');
+insert into answers  values(default, '671,000,000 mph', 1, true);
+insert into answers  values(default, '100,000 mph', 1, false);
+insert into answers  values(default, '671 mph', 1, false);
+insert into answers  values(default, '6,000 mph', 1, false);
 
 alter table courses
 add constraint fk_teacher

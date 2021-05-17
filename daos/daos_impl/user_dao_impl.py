@@ -68,6 +68,7 @@ class UserDAOImpl(UserDAO):
         cursor.execute(sql, [userid])
         connection.commit()
 
+
     # ----------- Testing section -------------
     def _test(self):
         pass

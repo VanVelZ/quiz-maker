@@ -3,19 +3,21 @@ from models.answers import Answers
 
 class Questions:
 
-    def __init__(self, id=0, description="", answers=None):
+    def __init__(self, id=0, description="", answers=None, students_answer=None):
         if answers is None:
             self.answers = []
         else:
             self.answers = answers
         self.id = id
         self.description = description
+        self.students_answer = students_answer
 
     def json(self):
         return {
             'questionsId': self.id,
             'description': self.description,
-            'answers': self._convert_answers_to_json()
+            'answers': self._convert_answers_to_json(),
+            'studentsAnswer': self.students_answer.json()
         }
 
     @staticmethod
@@ -24,6 +26,10 @@ class Questions:
         questions.id = json["questionsId"]
         questions.description = json["description"]
         questions.answers = map(Answers.json_parse, json["answers"])
+        try:
+            questions.students_answer = Answers.json_parse(json["studentsAnswer"])
+        except KeyError:
+            questions.students_answer = None
         return questions
 
     def _convert_answers_to_json(self):
