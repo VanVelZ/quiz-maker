@@ -49,6 +49,7 @@ class UserDAOImpl(UserDAO):
             return Users(record[0], record[1], record[2], record[3], record[4], record[5])
         else:
             raise ResourceNotFound(f"User with id: {userid} - Not Found")
+            
 
     def update_user(self, change):  # Update user Table
 

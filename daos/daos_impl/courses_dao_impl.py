@@ -1,6 +1,7 @@
 
 from daos.courses_dao import CoursesDAO
 from models.courses import Courses
+from daos.daos_impl.quizzes_dao_impl import QuizzesDaoImpl
 from util.db_connection import connection
 
 class CoursesDaoImpl(CoursesDAO):
@@ -25,6 +26,7 @@ class CoursesDaoImpl(CoursesDAO):
         record = cursor.fetchone()
         course = Courses(record[0], record[1], record[2])
         return course
+    
 
 
         # commenting this out for now until getting the other daos impl from main/merge

@@ -49,6 +49,7 @@ class QuizzesDaoImpl(QuizesDAO):
         quiz = QuizzesDaoImpl.get_quiz(quiz_id)
         for question in quiz.questions:
             question.students_answer = AnswersDaoImpl.get_students_answer(question.id, user_id)
+        quiz.get_quiz_grade()
         return quiz
 
     @staticmethod
