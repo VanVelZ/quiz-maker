@@ -1,6 +1,7 @@
 .DS_Store
 /util/db_connection.py
 /venv/
-.idea/
+/.idea/
 /.vscode
 __pycache__/
+/JavaLogin/.idea/
