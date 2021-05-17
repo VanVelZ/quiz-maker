@@ -3,4 +3,4 @@
 /venv/
 /.idea
 /.vscode
-__psycache__/
+__pycache__/
