@@ -45,14 +45,14 @@ create table student_questions(id serial primary key,
 							question_id int not null,
 							answer_id int not null);
 
-insert into users values(default, 'Steve', 'Steven', '100000', 'password', 0);
-insert into users values(default, 'Ben', 'Steven', '100001', 'password', 0);
-insert into users values(default, 'George', 'Steven', '100002', 'password', 0);
-insert into users values(default, 'Jeff', 'Steven', '100003', 'password', 0);
-insert into users values(default, 'Beth', 'Steven', '100004', 'password', 0);
+insert into users values(default, 'Steve', 'Steven', '100000', 'password', 1);
+insert into users values(default, 'Ben', 'Steven', '100001', 'password', 1);
+insert into users values(default, 'George', 'Steven', '100002', 'password', 1);
+insert into users values(default, 'Jeff', 'Steven', '100003', 'password', 1);
+insert into users values(default, 'Beth', 'Steven', '100004', 'password', 1);
 
-insert into users values(default, 'Mister', 'Teacher', '200000', 'password', 1);
-insert into users values(default, 'Miss', 'Teacher', '200001', 'password', 1);
+insert into users values(default, 'Mister', 'Teacher', '200000', 'password', 2);
+insert into users values(default, 'Miss', 'Teacher', '200001', 'password', 2);
 
 
 insert into courses values(default, 'Physical Science', 6);
