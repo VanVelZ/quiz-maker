@@ -18,13 +18,4 @@ function setCookie(cname, value){
 }
 function clearCookie(cname) {
     document.cookie = `${cname}=` + undefined
-    window.location.href = "login.html"
-}
-
-function checkCookie() {
-    employee = getCookie("employee")
-    console.log(employee)
-    if (employee == "undefined") {
-        location.href = "login.html"
-    }
 }
