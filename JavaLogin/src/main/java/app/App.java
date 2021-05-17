@@ -8,7 +8,7 @@ public class App {
 
     public static void main(String[] args) {
 
-        Javalin app = Javalin.create();
+        Javalin app = Javalin.create(config -> config.enableCorsForAllOrigins());
         establishRoutes(app);
 
         app.start(7001);
