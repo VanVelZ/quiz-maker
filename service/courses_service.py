@@ -3,20 +3,25 @@ from models.courses import Courses
 
 
 class CoursesService:
-    courses_dao = CoursesDaoImpl()
 
-    @classmethod
-    def all_courses(cls):
-        return cls.courses_dao.get_all_courses()
+    @staticmethod
+    def all_courses():
+        return CoursesDaoImpl.get_all_courses()
 
-    @classmethod
-    def get_course_by_id(cls, course_id):
-        return cls.courses_dao.get_course_by_id(course_id)
+    @staticmethod
+    def get_course_by_id(course_id):
+        return CoursesDaoImpl.get_course_by_id(course_id)
 
-    @classmethod
+    @staticmethod
     def get_course_by_teacher_id(cls, teacher_id):
         courses = CoursesDaoImpl.get_courses_by_teacher_id(teacher_id)
         courses_as_json = []
         for course in courses:
             courses_as_json.append(course.json())
         return courses_as_json
+
+    @staticmethod
+    def get_student_grade(course_id, student_id):
+        return {
+            "grade": CoursesDaoImpl.get_student_grade(course_id, student_id)
+        }
