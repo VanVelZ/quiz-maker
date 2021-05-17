@@ -8,10 +8,9 @@ class CoursesDAO(ABC):
         pass
 
     @abstractmethod
-    def get_courses_by_id(self, courseid):
+    def get_course_by_id(self, courseid):
         pass
 
-    @staticmethod
     @abstractmethod
-    def get_courses_by_teacher_id(teacher_id):
+    def get_courses_by_teacher_id(self, teacher_id):
         pass

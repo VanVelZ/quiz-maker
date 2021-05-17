@@ -1,7 +1,6 @@
-
 # ---------------- Create a new user and return 201 status code for successful creation ----------------------
-from flask import request, jsonify
-
+# from flask import request, jsonify
+from flask import Flask, jsonify, request, app
 from exceptions.resource_not_found import ResourceNotFound
 from models.users import Users
 from service.user_services import UserService
@@ -12,8 +11,11 @@ def route(app):
     # ----Create a new user
     def post_user():
         user = Users.json_parse(request.json)
-        user_services = UserService.create_employee(user)
-        return jsonify(user_services.json()), 201  # resource created
+        print(("printing.....",user))
+        user_services = UserService.create_user(user)
+        print("userserivices", user_services)
+        return jsonify(str(user_services)), 201  # resource created
+        # return jsonify(user.json()) , 201
 
     # ----Retrieve all users from the database and return status code of 200 for successful retrieval
     @app.route("/users", methods=['GET'])
@@ -32,13 +34,13 @@ def route(app):
         except ResourceNotFound as r:
             return r.message, 404
 
-    # ---------------- Update a Employee  with an ID and return 200 status for a successful Update  or 404 ----------------------
-    @app.route("/user/<userid>", methods=['PUT'])
-    def update_user(userid):
+    # ---------------- Update a User  with an ID and return 200 status for a successful Update  or 404 ----------------------
+    @app.route("/user/<user_id>", methods=['PUT'])
+    def update_user(user_id):
         try:
             user = Users.json_parse(request.json)
-            user.users_id = int(user)
-            UserService.update_employee(user)
+            user.users_id = int(user_id)
+            UserService.update_user(user)
             return jsonify(user.json()), 200
         except ValueError as e:
             return "Not a valid ID or No such user exist with this ID", 400  # Bad Request

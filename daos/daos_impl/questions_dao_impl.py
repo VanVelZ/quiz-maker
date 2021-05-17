@@ -6,7 +6,7 @@ from util.db_connection import create_connection
 connection = create_connection()
 
 
-class QuestionDaoImpl(QuestionsDAO):
+class QuestionDAOImpl(QuestionsDAO):
 
     @staticmethod
     def get_all_questions_for_quiz(quiz_id):

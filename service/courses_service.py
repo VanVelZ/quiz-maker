@@ -3,7 +3,7 @@ from models.courses import Courses
 
 
 class CoursesService:
-    courses_dao = CoursesDaoImpl()
+    courses_dao = CoursesDaoImpl
 
     @classmethod
     def all_courses(cls):

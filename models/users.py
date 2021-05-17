@@ -27,5 +27,8 @@ class Users:
         users.login_id = json["loginId"]
         users.password = json["password"]
         users.role_id = json["roleId"]
-
+        print(users)
         return users
+
+    def __repr__(self):
+        return str(self.json())

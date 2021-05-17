@@ -1,8 +1,8 @@
-from daos.daos_impl.questions_dao_impl import QuestionsDAOImpl
+from daos.daos_impl.questions_dao_impl import QuestionDAOImpl
 
 
 class QuestionsServices:
-    questions_dao = QuestionsDAOImpl()
+    questions_dao = QuestionDAOImpl()
 
     @classmethod
     def get_all_questions(cls):

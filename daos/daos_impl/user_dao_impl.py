@@ -6,14 +6,13 @@ from daos.user_dao import UserDAO
 
 class UserDAOImpl(UserDAO):
 
-    @staticmethod
-    def create_user(user):  # Create new User
-        sql = "INSERT INTO users VALUES(DEFAULT, %s, %s, %s, %s ) RETURNING *"
+    def create_user(self, user):  # Create new User
+        sql = "INSERT INTO users VALUES (DEFAULT, %s, %s, %s, %s ,%s) RETURNING *"
         cursor = connection.cursor()
         cursor.execute(sql, [user.first_name, user.last_name, user.login_id, user.password, user.role_id])
         connection.commit()
         record = cursor.fetchone()
-
+        print("records is: " ,record)
         return Users(users_id=record[0],
                      first_name=record[1],
                      last_name=record[2],
@@ -21,8 +20,9 @@ class UserDAOImpl(UserDAO):
                      password=record[4],
                      role_id=record[5])
 
-    @staticmethod
-    def get_all_users():  # Retrieve all User from User and return
+        #return Users(int(record[0]), record[1], record[2], record[3], record[4], int(record[5])).json()
+
+    def get_all_users(self):  # Retrieve all User from User and return
         sql = "SELECT * FROM users"
         cursor = connection.cursor()
         cursor.execute(sql)
@@ -38,8 +38,7 @@ class UserDAOImpl(UserDAO):
             user_list.append(users.json())
         return user_list
 
-    @staticmethod
-    def get_users_by_id(userid):  # Retrieve  User  by ID from users and return
+    def get_user_by_id(self, userid):  # Retrieve  User  by ID from users and return
         sql = "SELECT * FROM users where id=%s"
         cursor = connection.cursor()
         cursor.execute(sql)
@@ -52,15 +51,18 @@ class UserDAOImpl(UserDAO):
 
     def update_user(self, change):  # Update user Table
 
-        sql = "UPDATE users SET first_name = %s, last_name=%s, password=%s  WHERE id=%s RETURNING *"
+        sql = "UPDATE users SET first_name = %s, last_name=%s, password=%s ,login_id=%s ,users_id=%s,role_id=%s  WHERE id=%s RETURNING *"
         cursor = connection.cursor()
         cursor.execute(sql,
                        (change.first_name,
                         change.last_name,
-                        change.password))
+                        change.password,
+                        change.login_id,
+                        change.users_id,
+                        change.role_id))
         connection.commit()
         record = cursor.fetchone()
-        return Users(record[0], record[1], record[2], record[3])
+        return Users(record[0], record[1], record[2] ,record[3], record[4], record[5]).json()
 
     def delete_user(self, userid):  # Delete an  Employee  from Table
         sql = "DELETE FROM users WHERE id =%s"
