@@ -17,7 +17,7 @@ class Questions:
             'questionsId': self.id,
             'description': self.description,
             'answers': self._convert_answers_to_json(),
-            'studentsAnswer': self.students_answer.json()
+            'studentsAnswer': self.students_answer.json() if self.students_answer else None
         }
 
     @staticmethod

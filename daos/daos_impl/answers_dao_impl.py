@@ -45,4 +45,4 @@ class AnswersDaoImpl(AnswersDAO):
         cursor = connection.cursor()
         cursor.execute(sql, [question_id, student_id])
         id = cursor.fetchone()
-        return AnswersDaoImpl.get_answer(id)
+        return AnswersDaoImpl.get_answer(id) if id else None

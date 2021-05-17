@@ -23,3 +23,7 @@ def route(app):
     @app.route("/courses/<teacher_id>", methods=['GET'])
     def get_course_by_teacher_id(teacher_id):
         return jsonify(CoursesDaoImpl.get_courses_by_teacher_id(teacher_id))
+
+    @app.route("/courses/<course_id>/<student_id>", methods=["GET"])
+    def get_student_grade(course_id, student_id):
+        return jsonify(CoursesService.get_student_grade(course_id, student_id))
