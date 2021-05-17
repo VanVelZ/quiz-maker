@@ -38,4 +38,3 @@ class CoursesDaoImpl(CoursesDAO):
             course = Courses(record[0], record[1], record[2])
             courses_list.append(course.json())
         return courses_list
-
