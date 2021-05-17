@@ -16,9 +16,9 @@ function getCookie(cname) {
 function setCookie(cookies){
     document.cookie = ""
     cookies.forEach(cookie => {
-        document.cookie += `${cookie.name}=` + cookie.value
+        document.cookie = `${cookie.name}=` + cookie.value
     });
 }
 function clearCookie(cname) {
-    document.cookie = `${cname}=` + undefined
+    document.cookie = ""
 }

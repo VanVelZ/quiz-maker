@@ -1,9 +1,8 @@
-console.log(user)
+console.log(getCookie('userId'))
 
 function getStudentInfo() {
-    event.preventDefault();
 
-    thisUserId = user.userId
+    thisUserId = getCookie('userId')
 
         let xhttp = new XMLHttpRequest();
          xhttp.onreadystatechange = function () {
@@ -21,7 +20,7 @@ function getStudentInfo() {
 
 
 
-    url = url = "http://127.0.0.1:5000/users/" + thisUserId
+    url = url = "http://127.0.0.1:5000/user/" + thisUserId
 
     xhttp.open("GET", url, true)
     xhttp.send()
