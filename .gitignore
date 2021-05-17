@@ -1,5 +1,5 @@
 .DS_Store
-./util/db_connection.py
-./venv/
-./.idea
-./.vscode
+/util/db_connection.py
+/venv/
+/.idea
+/.vscode
