@@ -2,10 +2,13 @@ function login() {
     
     event.preventDefault();
     
-    thisUserId = document.getElementById("nameField").value
+    user = {
+        loginId: "100001",
+        password: "password"
+    }
+    var json = JSON.stringify(user)
+
     let xhttp = new XMLHttpRequest();
-
-
     xhttp.onreadystatechange = function () {
         
 
@@ -24,10 +27,16 @@ function login() {
 
     }
 
-    url = url = "http://127.0.0.1:5000/users/" + thisUserId
+    url = url = "http://127.0.0.1:7001/login"
 
-    xhttp.open("GET", url, true)
-    xhttp.send()
+    xhttp.open("POST", url, true)
+    xhttp.setRequestHeader('Content-type','application/json')
+    xhttp.send(json)
     
 
 }
+
+// {
+//     "loginId": "100001",
+//     "password": "password"
+// }
