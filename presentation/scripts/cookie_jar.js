@@ -13,8 +13,11 @@ function getCookie(cname) {
     }
     return undefined;
 }
-function setCookie(cname, value){
-    document.cookie = `${cname}=` + value
+function setCookie(cookies){
+    document.cookie = ""
+    cookies.forEach(cookie => {
+        document.cookie += `${cookie.name}=` + cookie.value
+    });
 }
 function clearCookie(cname) {
     document.cookie = `${cname}=` + undefined
