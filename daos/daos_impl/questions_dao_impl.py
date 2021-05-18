@@ -40,7 +40,7 @@ class QuestionDAOImpl(QuestionsDAO):
         cursor = connection.cursor()
         cursor.execute(sql, [user_id,
                              question.id,
-                             question.students_answer.id])
+                             question.students_answer])
         connection.commit() if commit else connection.rollback()
         return True
 

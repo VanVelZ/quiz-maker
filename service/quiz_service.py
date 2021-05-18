@@ -23,3 +23,7 @@ class QuizService:
     @staticmethod
     def submit_quiz(quiz, student_id):
         return QuizzesDaoImpl.submit_quiz(quiz, student_id).json()
+
+    @staticmethod
+    def get_quiz(id):
+        return QuizzesDaoImpl.get_quiz(id).json()
