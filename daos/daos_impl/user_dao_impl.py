@@ -76,6 +76,7 @@ class UserDAOImpl(UserDAO):
         cursor = connection.cursor()
         cursor.execute(sql, [userid])
         connection.commit()
+        return True
 
     # ----------- Testing section -------------
     def _test(self):
