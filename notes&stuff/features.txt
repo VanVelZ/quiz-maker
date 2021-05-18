@@ -1,0 +1,46 @@
+Endpoints:
+    answers:
+            Get all
+    courses:
+            Get all
+            get by ID
+            get by teacher 
+            get student grade
+    questions:
+            get all
+    quiz:
+            get all by course_id
+            create
+            submit
+            review
+    student_courses:
+            get all
+            get by id
+    student_questions:
+            get all
+    user:
+            create X
+            get all X
+            get by id 
+            Update X
+            delete X
+
+Complete: 
+        As a user I can log in 
+        As a teacher I can create tests for my students
+Has endpoint but needs Frontend components:
+        As a teacher I can view my students specific test’s grades
+        As a teacher I can view my students cumulative grades
+        As a student I can see my grades for tests
+        As a student I can see my cumulative grades
+        As a student I can view the results of tests
+Has Endpoint but is broken:
+        As a student I can view available tests
+Non-Feature Todo List:                                                          Donald | Zach | Chris | Alex
+        Python Dao tests                                                Tues     X       x              
+        Python Service tests with mock attempt                          Wed              x
+        Python cucumber tests                                           Thurs
+        Java Dao tests                                                  Fri
+        Java Service tests with mocks                                   Sat
+        Java cucumber tests
+        
