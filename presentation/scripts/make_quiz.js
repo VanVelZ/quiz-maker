@@ -2,13 +2,13 @@
 //Globals
 questionCount = 1
 class Question {
-    constructor(name) {
+    constructor(name, answers=[]) {
         this.name = name
-        this.answers = []
+        this.answers = answers
     }
 }
 class Answer {
-    constructor(name, isCorrect = false) {
+    constructor(name, isCorrect) {
         this.name = name
         this.isCorrect = isCorrect
     }
