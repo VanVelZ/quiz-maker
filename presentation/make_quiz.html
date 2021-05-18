@@ -10,7 +10,7 @@
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body onload="onLoad()">
     <h1>Quiz Maker</h1>
     <h6><button id="logoutButton" onclick="logout()">Sign Out</button></h6>
 
@@ -23,7 +23,10 @@
             </tr>
             <tr>
                 <td class="dataName">Class</td>
-                <td id="class">-</td>
+                <td id="class">
+                    <select id="courseSelect">
+                    </select>
+                </td>
             </tr>
         </table>
     </div>

@@ -23,6 +23,32 @@ class Quiz {
         this.id = id
     }
 }
+function onLoad(){
+    teacherId = 6
+    getCourses()
+}
+function getCourses(){
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let courses = JSON.parse(this.response)
+            console.log(courses)
+            Array.prototype.forEach.call(courses, function (course) {
+                document.getElementById("courseSelect").innerHTML = `
+                    <option value=${course.coursesId}>${course.name}</option>
+                `
+            });
+        } 
+    }
+
+    let url = "http://127.0.0.1:5000/courses/teacher/" + teacherId
+
+    xhr.open("GET", url, true)
+
+    xhr.send()
+}
 function submitQuiz(){
     let quizName = document.getElementById("quizName").value
     let courseId = 1
@@ -40,7 +66,7 @@ function submitQuiz(){
 
 
 
-url = url = "http://127.0.0.1:5000/quizzes/"
+let url  = "http://127.0.0.1:5000/quizzes/"
 
 xhttp.open("PUT", url, true)
 console.log(json)

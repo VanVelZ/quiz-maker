@@ -20,7 +20,7 @@ def route(app):
         except ResourceNotFound as r:
             return r.message, 404
 
-    @app.route("/courses/<teacher_id>", methods=['GET'])
+    @app.route("/courses/teacher/<teacher_id>", methods=['GET'])
     def get_course_by_teacher_id(teacher_id):
         return jsonify(CoursesDaoImpl.get_courses_by_teacher_id(teacher_id))
 
