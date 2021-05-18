@@ -74,25 +74,14 @@ xhttp.setRequestHeader('Content-type','application/json')
 xhttp.send(json)
 
 }
-function logout() {
+function logout(event) {
 
-        let xhttp = new XMLHttpRequest();
+    event.preventDefault()
+    console.log("logout")
 
+    clearCookie([userId])
 
-        xhttp.onreadystatechange = function () {
-                
-            document.getElementById("name").innerHTML = ""
-            document.getElementById("employee_id").innerHTML = ""
-            document.getElementById("supervisor_id").innerHTML = ""
-
-    }
-
-
-
-    url = url = "http://127.0.0.1:5000/users/" + thisUserId
-
-    xhttp.open("DELETE", url, true)
-    xhttp.send()
+    window.location.href = "///Users/alexjones/Desktop/RevatureTraining/Project2/presentation/index.html"
 }
 function getQuestions() {
     let questionDescriptions = document.getElementsByClassName("questionDescription")
