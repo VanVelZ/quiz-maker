@@ -2,18 +2,52 @@
 //Globals
 questionCount = 1
 class Question {
-    constructor(name, answers=[]) {
-        this.name = name
+    constructor(id, description, answers=[]) {
+        this.id = id
+        this.description = description
         this.answers = answers
     }
 }
 class Answer {
-    constructor(name, isCorrect) {
-        this.name = name
+    constructor(description, isCorrect, id=0) {
+        this.description = description
         this.isCorrect = isCorrect
+        this.id = id
     }
 }
+class Quiz {
+    constructor(name, courseId, questions, id=0){
+        this.name = name
+        this.courseId = courseId
+        this.questions = questions
+        this.id = id
+    }
+}
+function submitQuiz(){
+    let quizName = document.getElementById("quizName").value
+    let courseId = 1
+    let quiz = new Quiz(quizName, courseId, getQuestions())
+    let json = JSON.stringify(quiz)
 
+    let xhttp = new XMLHttpRequest();
+
+
+    xhttp.onreadystatechange = function () {
+            
+        console.log(this.response)
+
+}
+
+
+
+url = url = "http://127.0.0.1:5000/quizzes/"
+
+xhttp.open("PUT", url, true)
+console.log(json)
+xhttp.setRequestHeader('Content-type','application/json')
+xhttp.send(json)
+
+}
 function logout() {
 
         let xhttp = new XMLHttpRequest();
@@ -34,17 +68,37 @@ function logout() {
     xhttp.open("DELETE", url, true)
     xhttp.send()
 }
-function makeQuiz() {
-    quizName = document.getElementById("quizName").value
-    questionDescriptions = document.getElementsByClassName("questionDescription")
-    questions = []
+function getQuestions() {
+    let questionDescriptions = document.getElementsByClassName("questionDescription")
+    let questions = []
+    let count = 1
     Array.prototype.forEach.call(questionDescriptions, function (element) {
-        questions.push(new Question(element.value))
+        let question = new Question(count, element.value)
+        getAnswersFor(question)
+        questions.push(question)
+        count++
     });
-    console.log(quizName)
     console.log(questions)
+    return questions
+}
+function getAnswersFor(question){
+    let answers = document.getElementsByClassName(`q${question.id}Answer`)
+    let answerRadios = document.getElementsByName(`q${question.id}Radio`)
+    let selectedValue = getChecked(answerRadios);
+    Array.prototype.forEach.call(answers, function (element) {
+        question.answers.push(new Answer(element.value, selectedValue == element.name))
+    });
+}
+function getChecked(radioButtions){
+    for (const a of radioButtions) {
+        if (a.checked) {
+            return a.value;
+        }
+    }
+
 }
 function addQuestion(){
+    questions = getQuestions()
     questionCount += 1
     document.getElementById("quiz").innerHTML += 
     `
@@ -69,4 +123,25 @@ function addQuestion(){
         <td id="option1_4Radio"> D <input type="radio" name="q${questionCount}Radio" value="a${questionCount}_4"> Correct Answer </td>
     </tr>
     `
+    refillValues(questions)
+}
+
+function refillValues(questions){
+    let count = 0
+    questionDescriptions = document.getElementsByClassName("questionDescription")
+        Array.prototype.forEach.call(questionDescriptions, function (element) {
+            if(count < questions.length){ 
+                let answers = document.getElementsByClassName(`q${questions[count].id}Answer`)
+                let answerRadios = document.getElementsByName(`q${questions[count].id}Radio`)
+                let selectedValue = getChecked(answerRadios);
+                let aCount = 0
+                Array.prototype.forEach.call(answers, function (answer) {
+                    answer.value = questions[count].answers[aCount].description
+                    if(questions[count].answers[aCount].isCorrect) answerRadios[aCount].checked = true
+                    aCount+=1
+                });
+                element.value = questions[count].description
+            }
+            count+=1
+    });
 }

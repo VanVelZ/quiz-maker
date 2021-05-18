@@ -14,7 +14,7 @@ class Questions:
 
     def json(self):
         return {
-            'questionsId': self.id,
+            'id': self.id,
             'description': self.description,
             'answers': self._convert_answers_to_json(),
             'studentsAnswer': self.students_answer.json() if self.students_answer else None
@@ -23,7 +23,7 @@ class Questions:
     @staticmethod
     def json_parse(json):
         questions = Questions()
-        questions.id = json["questionsId"]
+        questions.id = json["id"] if json["id"] else None
         questions.description = json["description"]
         questions.answers = map(Answers.json_parse, json["answers"])
         try:

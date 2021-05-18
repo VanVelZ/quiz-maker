@@ -25,7 +25,7 @@ class Quizzes:
     @staticmethod
     def json_parse(json):
         quizzes = Quizzes()
-        quizzes.id = json["quizzesId"]
+        quizzes.id = json["id"]
         quizzes.name = json["name"]
         quizzes.course_id = json["courseId"]
         quizzes.questions = map(Questions.json_parse, json["questions"])
