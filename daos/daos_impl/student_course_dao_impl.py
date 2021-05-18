@@ -6,9 +6,7 @@ from util.db_connection import connection
 
 class StudentCourseDaoImpl(StudentCoursesDAO):
 
-
-    @staticmethod
-    def get_all_student_courses():  # retrieve all student courses
+    def get_all_students_courses(self):  # retrieve all student courses
         sql = "SELECT * FROM student_courses"
         cursor = connection.cursor()
         cursor.execute(sql)
@@ -19,7 +17,7 @@ class StudentCourseDaoImpl(StudentCoursesDAO):
             studentcourses_list.append(student_courses.json())
         return studentcourses_list
 
-    def get_courses_by_id(self,  courseid):
+    def get_courses_by_id(self, courseid):
         sql = "SELECT * FROM student_courses where id=%s"
         cursor = connection.cursor()
         cursor.execute(sql)
@@ -29,4 +27,3 @@ class StudentCourseDaoImpl(StudentCoursesDAO):
             return StudentCourses(record[0], record[1], record[2])
         else:
             raise ResourceNotFound(f"Student course id: {courseid} - Not Found")
-
