@@ -1,10 +1,13 @@
 function login() {
     
     event.preventDefault();
+
+    logn = document.getElementById("loginField").value
+    passf = document.getElementById("passField").value
     
     user = {
-        loginId: "100001",
-        password: "password"
+        loginId: logn,
+        password: passf
     }
     var json = JSON.stringify(user)
 
@@ -14,14 +17,12 @@ function login() {
 
         if (this.readyState == 4 && this.status == 200) {
             let user = JSON.parse(this.responseText)
-            console.log(user)
             let cookie = {
                 name: 'userId',
                 value: user.userId
                 }
             clearCookie()
             setCookie([cookie])
-            console.log(getCookie('userId'))
 
             // if student
             if (user.roleId == 1){
@@ -42,6 +43,7 @@ function login() {
     
 
 }
+clearCookie(userId)
 
 // {
 //     "loginId": "100001",
