@@ -22,3 +22,9 @@ function setCookie(cookies){
 function clearCookie(cname) {
     document.cookie = ""
 }
+class Cookie{
+    constructor(name, value){
+        this.name = name
+        this.value = value
+    }
+}
