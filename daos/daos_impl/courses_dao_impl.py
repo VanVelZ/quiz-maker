@@ -39,7 +39,7 @@ class CoursesDaoImpl(CoursesDAO):
             course = Courses(record[0], record[1], record[2])
             courses_list.append(course.json()), 200
         return courses_list
-
+      
     @staticmethod
     def get_student_grade(course_id,student_id):
         sql = "SELECT * FROM student_courses WHERE course_id=%s and  student_id=%s"
@@ -51,4 +51,3 @@ class CoursesDaoImpl(CoursesDAO):
             course = StudentCourses(record[0], record[1], record[2])
             student_courses_list.append(course.json()), 200
         return student_courses_list
-

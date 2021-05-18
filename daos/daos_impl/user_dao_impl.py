@@ -8,9 +8,12 @@ class UserDAOImpl(UserDAO):
 
     @staticmethod
     def create_user(user):  # Create new User
+
         sql = "INSERT INTO users VALUES(DEFAULT, %s, %s, %s, %s ,%s) RETURNING *"
+
         cursor = connection.cursor()
-        cursor.execute(sql, [user.first_name, user.last_name, user.login_id, user.password, user.role_id])
+        cursor.execute(sql, [user.first_name, user.last_name,
+                       user.login_id, user.password, user.role_id])
         connection.commit()
         record = cursor.fetchone()
 
@@ -66,6 +69,7 @@ class UserDAOImpl(UserDAO):
         connection.commit()
         record = cursor.fetchone()
         return Users(record[0], record[1], record[2], record[3], record[4], record[5])
+
 
     def delete_user(self, userid):  # Delete an  Employee  from Table
         sql = "DELETE FROM users WHERE id =%s"

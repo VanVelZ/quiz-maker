@@ -15,7 +15,14 @@ function login() {
         if (this.readyState == 4 && this.status == 200) {
             let user = JSON.parse(this.responseText)
             console.log(user)
-            
+            let cookie = {
+                name: 'userId',
+                value: user.userId
+                }
+            clearCookie()
+            setCookie([cookie])
+            console.log(getCookie('userId'))
+
             // if student
             if (user.roleId == 1){
                 window.location.href = "///Users/alexjones/Desktop/RevatureTraining/Project2/presentation/student_quizzes.html"
