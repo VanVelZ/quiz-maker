@@ -27,7 +27,7 @@ class Questions:
         questions.description = json["description"]
         questions.answers = map(Answers.json_parse, json["answers"])
         try:
-            questions.students_answer = Answers.json_parse(json["studentsAnswer"])
+            questions.students_answer = json["studentsAnswer"]
         except KeyError:
             questions.students_answer = None
         return questions

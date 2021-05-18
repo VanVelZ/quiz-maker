@@ -15,7 +15,7 @@ class Quizzes:
 
     def json(self):
         return {
-            'quizzesId': self.id,
+            'id': self.id,
             'name': self.name,
             'courseId': self.course_id,
             'questions': self._convert_questions_to_json(),
@@ -45,6 +45,6 @@ class Quizzes:
             if question.students_answer is None:
                 self.grade = None
                 return
-            if question.students_answer:
+            if question.students_answer.is_correct:
                 amount_correct += 1
         self.grade = amount_correct / len(self.questions) * 100

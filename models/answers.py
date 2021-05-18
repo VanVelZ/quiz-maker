@@ -16,7 +16,7 @@ class Answers:
     @staticmethod
     def json_parse(json):
         answers = Answers()
-        answers.id = json["id"] if "id" else None
+        answers.id = json["id"]
         answers.description = json["description"]
         answers.is_correct = json["isCorrect"]
 

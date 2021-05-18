@@ -51,7 +51,7 @@ function getCourses(){
 }
 function submitQuiz(){
     let quizName = document.getElementById("quizName").value
-    let courseId = 1
+    let courseId = document.getElementById("courseSelect").value
     let quiz = new Quiz(quizName, courseId, getQuestions())
     let json = JSON.stringify(quiz)
 
