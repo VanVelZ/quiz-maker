@@ -108,7 +108,7 @@ function addQuestion(){
     </tr>
     <tr>
         <td id="a1_1"><input class="q${questionCount}Answer" name="a${questionCount}_1" type="text" placeholder="Answer"></td>
-        <td id="option1_1Radio"> A <input type="radio" name="q${questionCount}Radio" value="a${questionCount}_1"> Correct Answer </td>
+        <td id="option1_1Radio"> A <input type="radio" name="q${questionCount}Radio" value="a${questionCount}_1" checked> Correct Answer </td>
     </tr>
     <tr>
         <td id="a1_2"><input class="q${questionCount}Answer" name="a${questionCount}_2" type="text" placeholder="Answer"></td>
