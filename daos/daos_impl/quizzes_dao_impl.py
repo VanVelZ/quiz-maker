@@ -1,13 +1,14 @@
-from daos.daos_impl.answers_dao_impl import AnswersDaoImpl
-from daos.daos_impl.questions_dao_impl import QuestionDaoImpl
+from daos.daos_impl.answers_dao_impl import AnswersDAOImpl
+from daos.daos_impl.questions_dao_impl import QuestionDAOImpl
 from daos.quizzes_dao import QuizesDAO
 from models.quizzes import Quizzes
 from util.db_connection import create_connection
 
 connection = create_connection()
 
+
 class QuizzesDaoImpl(QuizesDAO):
-  
+
     @staticmethod
     def get_all_quizzes_for_course(course_id):
         sql = "Select * from quizzes where course_id=%s"
@@ -18,7 +19,7 @@ class QuizzesDaoImpl(QuizesDAO):
 
         for record in records:
             quiz = Quizzes(id=record[0], name=record[1], course_id=record[2])
-            quiz.questions = QuestionDaoImpl.get_all_questions_for_quiz(quiz.id)
+            quiz.questions = QuestionDAOImpl.get_all_questions_for_quiz(quiz.id)
             quizzes.append(quiz)
         return quizzes
 
@@ -29,7 +30,7 @@ class QuizzesDaoImpl(QuizesDAO):
         cursor.execute(sql, [quiz_id])
         record = cursor.fetchone()
         quiz = Quizzes(id=record[0], name=record[1], course_id=record[2])
-        quiz.questions = QuestionDaoImpl.get_all_questions_for_quiz(quiz.id)
+        quiz.questions = QuestionDAOImpl.get_all_questions_for_quiz(quiz.id)
         return quiz
 
     @staticmethod
@@ -41,21 +42,21 @@ class QuizzesDaoImpl(QuizesDAO):
         id = cursor.fetchone()[0]
         connection.commit() if commit else connection.rollback()
         for question in quiz.questions:
-            QuestionDaoImpl.create_question(question, id)
+            QuestionDAOImpl.create_question(question, id)
         return True
 
     @staticmethod
     def get_quiz_review(quiz_id, user_id):
         quiz = QuizzesDaoImpl.get_quiz(quiz_id)
         for question in quiz.questions:
-            question.students_answer = AnswersDaoImpl.get_students_answer(question.id, user_id)
+            question.students_answer = AnswersDAOImpl.get_students_answer(question.id, user_id)
         quiz.get_quiz_grade()
         return quiz
 
     @staticmethod
     def submit_quiz(quiz, student_id):
         for question in quiz.questions:
-            QuestionDaoImpl.submit_question(question, student_id)
+            QuestionDAOImpl.submit_question(question, student_id)
         return QuizzesDaoImpl.get_quiz_review(quiz.id, student_id)
 
 
