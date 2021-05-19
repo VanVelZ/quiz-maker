@@ -1,11 +1,8 @@
 package service;
 
-import models.Login;
 import models.User;
-import org.apache.commons.logging.Log;
 import repositories.LoginRepo;
 
-import java.util.List;
 
 public class LoginService {
     public LoginRepo lr;

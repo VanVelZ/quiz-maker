@@ -26,9 +26,9 @@ function login() {
 
             // if student
             if (user.roleId == 1){
-                window.location.href = "///Users/alexjones/Desktop/RevatureTraining/Project2/presentation/student_quizzes.html"
+                window.location.href = "student_quizzes.html"
             } else {
-                window.location.href = "///Users/alexjones/Desktop/RevatureTraining/Project2/presentation/teacher_quizzes.html"
+                window.location.href = "teacher_quizzes.html"
             }
 
         }
