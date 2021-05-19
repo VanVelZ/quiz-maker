@@ -29,7 +29,7 @@ public class LoginServiceTest {
     }
 
     @Test
-    public void getMoviesAbovePriceSuccess() {
+    public void loginSuccess() {
 
         String loginId = "200000";
         String password = "password";
