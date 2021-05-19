@@ -7,4 +7,5 @@ public class User {
     public User(int id, int roleId){
         this.userId = id; this.roleId = roleId;
     }
+
 }
