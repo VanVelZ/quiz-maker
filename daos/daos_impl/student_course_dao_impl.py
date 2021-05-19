@@ -20,10 +20,10 @@ class StudentCourseDaoImpl(StudentCoursesDAO):
     def get_courses_by_id(self, courseid):
         sql = "SELECT * FROM student_courses where id=%s"
         cursor = connection.cursor()
-        cursor.execute(sql)
+        cursor.execute(sql,[courseid])
         record = cursor.fetchone()
 
         if record:
-            return StudentCourses(record[0], record[1], record[2])
+            return StudentCourses(record[0], record[1], record[2]).json()
         else:
             raise ResourceNotFound(f"Student course id: {courseid} - Not Found")

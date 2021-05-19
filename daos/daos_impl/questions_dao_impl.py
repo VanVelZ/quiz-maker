@@ -20,6 +20,7 @@ class QuestionDAOImpl(QuestionsDAO):
             question: Questions = Questions(id=record[0], description=record[2])
             question.answers = AnswersDAOImpl.get_all_answers_for_question(question.id)
             questions.append(str(question)), 200
+            print("all questions", question)
         return questions
 
     @staticmethod
