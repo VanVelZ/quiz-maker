@@ -68,7 +68,7 @@ class QuizzesDaoImpl(QuizesDAO):
 
         for record in records:
             quiz = Quizzes(id=record[0], name=record[1], course_id=record[2])
-            quiz.questions = QuestionDAOImpl.get_all_questions_for_quiz(quiz.id)
+            quiz.questions = QuestionDaoImpl.get_all_questions_for_quiz(quiz.id)
             if QuizzesDaoImpl.get_quiz_review(quiz.id, student_id).grade:
                 continue
             quizzes.append(quiz)
