@@ -24,6 +24,6 @@ class StudentCourseDaoImpl(StudentCoursesDAO):
         record = cursor.fetchone()
 
         if record:
-            return StudentCourses(record[0], record[1], record[2]).json()
+            return StudentCourses(record[0], record[1], record[2])
         else:
             raise ResourceNotFound(f"Student course id: {courseid} - Not Found")
