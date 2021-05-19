@@ -28,19 +28,22 @@ Endpoints:
 Complete: 
         As a user I can log in 
         As a teacher I can create tests for my students
-Has endpoint but needs Frontend components:
-        As a teacher I can view my students specific test’s grades
-        As a teacher I can view my students cumulative grades
-        As a student I can see my grades for tests
-        As a student I can see my cumulative grades
-        As a student I can view the results of tests
+        As a student I can take tests
+Has working endpoint but needs Frontend components:
+        As a teacher I can view my students specific test’s grades      3-4 hours
+        As a teacher I can view my students cumulative grades           1-3 hours
+        As a student I can see my grades for tests                      1-2 hours
+        As a student I can see my cumulative grades                     1-3 hours
+        As a student I can view the results of tests                    2-5 hours
 Has Endpoint but is broken:
-        As a student I can view available tests
-Non-Feature Todo List:                                                          Donald | Zach | Chris | Alex
-        Python Dao tests                                                Tues     X       x              
-        Python Service tests with mock attempt                          Wed              x
-        Python cucumber tests                                           Thurs
-        Java Dao tests                                                  Fri
-        Java Service tests with mocks                                   Sat
-        Java cucumber tests
+        As a student I can view available tests                         2-6 hours
+Non-Feature Todo List:                                                         
+        Python Dao tests                                                2-6 hours                                               
+        Python Service tests with mock attempt                          4-6 hours
+        Python cucumber tests                                           6+ hours
+        Java Dao tests                                                  1 hour
+        Java Service tests with mocks                                   1 hour
+        Java cucumber tests                                             1 hour
         
+
+                                                                Total:  27-44 hours
