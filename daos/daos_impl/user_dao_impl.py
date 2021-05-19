@@ -8,9 +8,10 @@ class UserDAOImpl(UserDAO):
 
     @staticmethod
     def create_user(user):  # Create new User
-        sql = "INSERT INTO users VALUES(DEFAULT, %s, %s, %s, %s ,%s) RETURNING *"
+        sql = "INSERT INTO users VALUES(DEFAULT, %s, %s, %s, %s , %s ) RETURNING *"
         cursor = connection.cursor()
-        cursor.execute(sql, [user.first_name, user.last_name, user.login_id, user.password, user.role_id])
+        cursor.execute(sql, [user.first_name, user.last_name,
+                       user.login_id, user.password, user.role_id])
         connection.commit()
         record = cursor.fetchone()
 
@@ -40,7 +41,7 @@ class UserDAOImpl(UserDAO):
 
     @staticmethod
     def get_user_by_id(userid):  # Retrieve  User  by ID from users and return
-        sql = "SELECT * FROM users where id=%s"
+        sql = "SELECT * FROM users where id= %s"
         cursor = connection.cursor()
         cursor.execute(sql, [userid])
         record = cursor.fetchone()
@@ -52,26 +53,23 @@ class UserDAOImpl(UserDAO):
 
     def update_user(self, change):  # Update user Table
 
-        sql = "UPDATE users SET first_name = %s, last_name=%s, login_id=%s, password=%s, role_id=%s  WHERE id=%s " \
-              "RETURNING * "
+        sql = "UPDATE users SET first_name = %s, last_name=%s, password=%s  WHERE id=%s RETURNING *"
         cursor = connection.cursor()
-        cursor.execute(sql,
-                       (change.first_name,
-                        change.last_name,
-                        change.login_id,
-                        change.password,
-                        change.role_id,
-                        change.users_id))
-
+        cursor.execute(sql, (change.first_name, change.last_name,
+                       change.password, change.users_id))
         connection.commit()
         record = cursor.fetchone()
-        return Users(record[0], record[1], record[2], record[3], record[4], record[5])
+
+        user = Users(record[0], record[1], record[2],
+                     record[3], record[4], record[5])
+        return user
 
     def delete_user(self, userid):  # Delete an  Employee  from Table
         sql = "DELETE FROM users WHERE id =%s"
         cursor = connection.cursor()
         cursor.execute(sql, [userid])
         connection.commit()
+        return True
 
     # ----------- Testing section -------------
     def _test(self):

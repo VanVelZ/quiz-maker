@@ -7,7 +7,7 @@ class Answers:
 
     def json(self):
         return {
-            'answersId': self.id,
+            'id': self.id,
             'description': self.description,
             'isCorrect': self.is_correct,
 
@@ -16,7 +16,7 @@ class Answers:
     @staticmethod
     def json_parse(json):
         answers = Answers()
-        answers.id = json["answersId"]
+        answers.id = json["id"]
         answers.description = json["description"]
         answers.is_correct = json["isCorrect"]
 

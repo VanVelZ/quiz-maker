@@ -4,8 +4,7 @@ from util.db_connection import create_connection
 
 connection = create_connection()
 
-
-class AnswersDAOImpl(AnswersDAO):
+class AnswersDaoImpl(AnswersDAO):
 
     @staticmethod
     def get_all_answers_for_question(question_id):
@@ -17,7 +16,7 @@ class AnswersDAOImpl(AnswersDAO):
 
         for record in records:
             answer = Answers(id=record[0], description=record[1], is_correct=record[3])
-            answers.append(answer.json())
+            answers.append(answer)
         return answers
 
     @staticmethod
@@ -38,7 +37,7 @@ class AnswersDAOImpl(AnswersDAO):
         record = cursor.fetchone()
 
         answer = Answers(id=record[0], description=record[1], is_correct=record[3])
-        return answer.json()
+        return answer
 
     @staticmethod
     def get_students_answer(question_id, student_id):
@@ -46,4 +45,4 @@ class AnswersDAOImpl(AnswersDAO):
         cursor = connection.cursor()
         cursor.execute(sql, [question_id, student_id])
         id = cursor.fetchone()
-        return AnswersDAOImpl.get_answer(id) if id else None
+        return AnswersDaoImpl.get_answer(id) if id else None

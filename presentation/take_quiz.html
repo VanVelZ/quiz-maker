@@ -10,9 +10,9 @@
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body onload="onLoad()">
     <h1>Quiz Maker</h1>
-    <h6><button id="logoutButton" onclick="logout()">Sign Out</button></h6>
+    <h6><button id="logoutButton" onclick="logout(event)">Sign Out</button></h6>
 
     <div id="studentTable" div="container">
         <table class="table table-striped table-bordered table-hover">
@@ -29,252 +29,10 @@
     </div>
     <h3>Take a Quiz</h3>
 
-    <div id="takeQuizTable" div="container">
-        <table class="table table-striped table-bordered table-hover">
-            <tr>
-                <td class="dataName">Quiz Name</th>
-                <td id="quizName">-</th>
-            </tr>
-<!-- ------------------QUESTION ONE--------------------------- -->
-            <div id="questionOne">
-            <tr>
-                <td class="dataName">Question One</td>
-                <td id="q1">-</td>
-            </tr>
-            <tr>
-                <td id="a1_1">-</td>
-                <td id="option1_1Radio"> A <input type="radio" name="option1Radio" value="correct"></td>
-            </tr>
-            <tr>
-                <td id="a1_2">-</td>
-                <td id="option1_2Radio"> B <input type="radio" name="option1Radio" value="correct"></td>
-            </tr>
-            <tr>
-                <td id="a1_3">-</td>
-                <td id="option1_3Radio"> C <input type="radio" name="option1Radio" value="correct"></td>
-            </tr>
-            <tr>
-                <td id="a1_4">-</td>
-                <td id="option1_4Radio"> D <input type="radio" name="option1Radio" value="correct"></td>
-            </tr>
-        </div>
-<!-- ------------------QUESTION TWO--------------------------- -->
-        <div id="questionTwo">
-            <tr>
-                <td class="dataName">Question Two</td>
-                <td id="q2">-</td>
-            </tr>
-            <tr>
-                <td id="a2_1">-</td>
-                <td id="option2_1Radio"> A <input type="radio" name="option2Radio" value="correct"></td>
-            </tr>
-            <tr>
-                <td id="a2_2">-</td>
-                <td id="option2_2Radio"> B <input type="radio" name="option2Radio" value="correct"></td>
-            </tr>
-            <tr>
-                <td id="a2_3">-</td>
-                <td id="option2_3Radio"> C <input type="radio" name="option2Radio" value="correct"></td>
-            </tr>
-            <tr>
-                <td id="a2_4">-</td>
-                <td id="option2_4Radio"> D <input type="radio" name="option2Radio" value="correct"></td>
-            </tr>
-        </div>
- <!-- ------------------QUESTION THREE--------------------------- -->
-        <div id="questionThree">
-            <tr>
-                <td class="dataName">Question Three</td>
-                <td id="q3">-</td>
-            </tr>
-            <tr>
-                <td id="a3_1">-</td>
-                <td id="option3_1Radio"> A <input type="radio" name="option3Radio" value="correct"></td>
-            </tr>
-            <tr>
-                <td id="a3_2">-</td>
-                <td id="option3_2Radio"> B <input type="radio" name="option3Radio" value="correct"></td>
-            </tr>
-            <tr>
-                <td id="a3_3">-</td>
-                <td id="option3_3Radio"> C <input type="radio" name="option3Radio" value="correct"></td>
-            </tr>
-            <tr>
-                <td id="a3_4">-</td>
-                <td id="option3_4Radio"> D <input type="radio" name="option3Radio" value="correct"></td>
-            </tr>
-        </div>
-<!-- ------------------QUESTION FOUR--------------------------- -->
-        <div id="questionFour">
-            <tr>
-                <td class="dataName">Question Four</td>
-                <td id="q4">-</td>
-            </tr>
-            <tr>
-                <td id="a4_1">-</td>
-                <td id="option4_1Radio"> A <input type="radio" name="option4Radio" value="correct"></td>
-            </tr>
-            <tr>
-                <td id="a4_2">-</td>
-                <td id="option4_2Radio"> B <input type="radio" name="option4Radio" value="correct"></td>
-            </tr>
-            <tr>
-                <td id="a4_3">-</td>
-                <td id="option4_3Radio"> C <input type="radio" name="option4Radio" value="correct"></td>
-            </tr>
-            <tr>
-                <td id="a4_4">-</td>
-                <td id="option4_4Radio"> D <input type="radio" name="option4Radio" value="correct"></td>
-            </tr>
-        </div>
-<!-- ------------------QUESTION FIVE--------------------------- -->
-        <div id="questionFive">
-            <tr>
-                <td class="dataName">Question Five</td>
-                <td id="q5">-</td>
-            </tr>
-            <tr>
-                <td id="a5_1">-</td>
-                <td id="option5_1Radio"> A <input type="radio" name="option5Radio" value="correct"></td>
-            </tr>
-            <tr>
-                <td id="a5_2">-</td>
-                <td id="option5_2Radio"> B <input type="radio" name="option5Radio" value="correct"></td>
-            </tr>
-            <tr>
-                <td id="a5_3">-</td>
-                <td id="option5_3Radio"> C <input type="radio" name="option5Radio" value="correct"></td>
-            </tr>
-            <tr>
-                <td id="a5_4">-</td>
-                <td id="option5_4Radio"> D <input type="radio" name="option5Radio" value="correct"></td>
-            </tr>
-        </div>
-<!-- ------------------QUESTION SIX--------------------------- -->
-        <div id="questionSix">
-            <tr>
-                <td class="dataName">Question Six</td>
-                <td id="q6">-</td>
-            </tr>
-            <tr>
-                <td id="a6_1">-</td>
-                <td id="option6_1Radio"> A <input type="radio" name="option6Radio" value="correct"></td>
-            </tr>
-            <tr>
-                <td id="a6_2">-</td>
-                <td id="option6_2Radio"> B <input type="radio" name="option6Radio" value="correct"></td>
-            </tr>
-            <tr>
-                <td id="a6_3">-</td>
-                <td id="option6_3Radio"> C <input type="radio" name="option6Radio" value="correct"></td>
-            </tr>
-            <tr>
-                <td id="a6_4">-</td>
-                <td id="option6_4Radio"> D <input type="radio" name="option6Radio" value="correct"></td>
-            </tr>
-        </div>
-<!-- ------------------QUESTION SEVEN--------------------------- -->
-<div id="questionSeven">
-    <tr>
-        <td class="dataName">Question Seven</td>
-        <td id="q7">-</td>
-    </tr>
-    <tr>
-        <td id="a7_1">-</td>
-        <td id="option7_1Radio"> A <input type="radio" name="option7Radio" value="correct"></td>
-    </tr>
-    <tr>
-        <td id="a7_2">-</td>
-        <td id="option7_2Radio"> B <input type="radio" name="option7Radio" value="correct"></td>
-    </tr>
-    <tr>
-        <td id="a7_3">-</td>
-        <td id="option7_3Radio"> C <input type="radio" name="option7Radio" value="correct"></td>
-    </tr>
-    <tr>
-        <td id="a7_4">-</td>
-        <td id="option7_4Radio"> D <input type="radio" name="option7Radio" value="correct"></td>
-    </tr>
-</div>
-<!-- ------------------QUESTION EIGHT--------------------------- -->
-<div id="questionEight">
-    <tr>
-        <td class="dataName">Question Eight</td>
-        <td id="q8">-</td>
-    </tr>
-    <tr>
-        <td id="a8_1">-</td>
-        <td id="option8_1Radio"> A <input type="radio" name="option8Radio" value="correct"></td>
-    </tr>
-    <tr>
-        <td id="a8_2">-</td>
-        <td id="option8_2Radio"> B <input type="radio" name="option8Radio" value="correct"></td>
-    </tr>
-    <tr>
-        <td id="a8_3">-</td>
-        <td id="option8_3Radio"> C <input type="radio" name="option8Radio" value="correct"></td>
-    </tr>
-    <tr>
-        <td id="a8_4">-</td>
-        <td id="option8_4Radio"> D <input type="radio" name="option8Radio" value="correct"></td>
-    </tr>
-</div>
-<!-- ------------------QUESTION NINE--------------------------- -->
-<div id="questionNine">
-    <tr>
-        <td class="dataName">Question Nine</td>
-        <td id="q9">-</td>
-    </tr>
-    <tr>
-        <td id="a9_1">-</td>
-        <td id="option9_1Radio"> A <input type="radio" name="option9Radio" value="correct"></td>
-    </tr>
-    <tr>
-        <td id="a9_2">-</td>
-        <td id="option9_2Radio"> B <input type="radio" name="option9Radio" value="correct"></td>
-    </tr>
-    <tr>
-        <td id="a9_3">-</td>
-        <td id="option9_3Radio"> C <input type="radio" name="option9Radio" value="correct"></td>
-    </tr>
-    <tr>
-        <td id="a9_4">-</td>
-        <td id="option9_4Radio"> D <input type="radio" name="option9Radio" value="correct"></td>
-    </tr>
-</div>
-<!-- ------------------QUESTION TEN--------------------------- -->
-<div id="questionTen">
-    <tr>
-        <td class="dataName">Question Ten</td>
-        <td id="q10">-</td>
-    </tr>
-    <tr>
-        <td id="a10_1">-</td>
-        <td id="option10_1Radio"> A <input type="radio" name="option10Radio" value="correct"></td>
-    </tr>
-    <tr>
-        <td id="a10_2">-</td>
-        <td id="option10_2Radio"> B <input type="radio" name="option10Radio" value="correct"></td>
-    </tr>
-    <tr>
-        <td id="a10_3">-</td>
-        <td id="option10_3Radio"> C <input type="radio" name="option10Radio" value="correct"></td>
-    </tr>
-    <tr>
-        <td id="a10_4">-</td>
-        <td id="option10_4Radio"> D <input type="radio" name="option10Radio" value="correct"></td>
-    </tr>
-</div>
+    <table id="quiz">
 
-
-        <div>
-            <tr><td>-</td><td>-</td</tr>
-            <tr><td>Make Sure All Fields are Filled</td><td><button id="takeQuizButton" onclick="takeQuiz()">Submit Quiz</button></td</tr> 
-            <tr><td>-</td><td>-</td</tr>
-        </div>
-        </table>
-    </div>
-
+    </table>
+    <button onclick="submitQuiz()">Submit</button>
 
     <div class=navnav>
         <input type=button onclick="location.href='file:///Users/alexjones/Desktop/RevatureTraining/Project2/presentation/index.html'" value="Home">
@@ -285,5 +43,6 @@
         <input type=button onclick="location.href='file:///Users/alexjones/Desktop/RevatureTraining/Project2/presentation/teacher_quizzes.html'" value="TeacherPage">
       </div>
 </body>
+<script src="scripts/cookie_jar.js"></script>
 <script src="scripts/take_quiz.js"></script>
 </html>
