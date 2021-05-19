@@ -30,3 +30,15 @@ class StudentCourseDaoImpl(StudentCoursesDAO):
         else:
             raise ResourceNotFound(
                 f"Student course id: {course_id} - Not Found")
+
+    @staticmethod
+    def load_courses_for_student(student_id):
+        sql = "Select course_id from student_courses where student_id =%s"
+        cursor = connection.cursor()
+        cursor.execute(sql, [student_id])
+        record = cursor.fetchall
+        courses = []
+        for courseID in record:
+            student_course = StudentCourses(id=courseID[0])
+            courses.append(student_course)
+            return courses
