@@ -11,3 +11,7 @@ class StudentCourseServices:
     @classmethod
     def get_student_courses_byid(cls, courseid):
         return cls.studentcourse_dao.get_courses_by_id(courseid)
+
+    @classmethod
+    def get_student_courses_by_studentid(cls, student_id):
+        return cls.studentcourse_dao.load_courses_for_student(student_id)
