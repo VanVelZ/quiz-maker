@@ -35,3 +35,7 @@ def route(app):
     def get_all_quizzes_for_course_for_student(course_id, student_id):
         return jsonify(QuizService.get_all_quizzes_for_course_for_student(course_id, student_id))
     
+    @app.route("/reviews/<course_id>/<student_id>/", methods=["GET"])
+    def get_all_reviews_for_course_for_student(course_id, student_id):
+        return jsonify(QuizService.get_all_reviews_for_course_for_student(course_id, student_id))
+    
