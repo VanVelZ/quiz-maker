@@ -24,7 +24,7 @@ class Quiz {
     }
 }
 function onLoads(){
-    teacherId = 6
+    teacherId = getCookie("userId")
     getCourses()
 }
 function getCourses(){
