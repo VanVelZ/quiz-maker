@@ -1,6 +1,6 @@
 
 getStudentClasses()
-
+findQuizzes()
 function getStudentInfo() {
    
     thisUserId = getCookie('userId')
@@ -12,7 +12,6 @@ function getStudentInfo() {
             let user = JSON.parse(this.responseText)
                 
         document.getElementById("studentName").innerHTML = user.firstName + " " + user.lastName
-        document.getElementById("studentId").innerHTML = user.usersId
         document.getElementById("classes").innerHTML = ""
         
         }
@@ -37,11 +36,10 @@ function getStudentClasses() {
 
         if (this.readyState == 4 && this.status == 200) {
             let classesRes = JSON.parse(this.responseText)
-            let classes = []
+            var classes = []
             classesRes.forEach(sc => {
                 classes.push(getCourse(sc.courseId))
             });
-
         }
 
     }
@@ -78,30 +76,52 @@ function getCourse(id){
     xhr.send()
 }
 
-function findQuizzes(){
+function loadQuiz(quizId){
+    setCookie([new Cookie("userId", thisUserId), new Cookie("quizId", quizId)])
+    location.href = "take_quiz.html"
+}
 
+function findQuizzes(){
     let xhr = new XMLHttpRequest();
 
     studid = getCookie('userId')
     
-    courid = document.getElementById("classes").value
+    let courid = document.getElementById("classes").value  
+    refresh()
     console.log(courid)
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let quizzes = JSON.parse(this.response)
             console.log(quizzes)
-                 
+            Array.prototype.forEach.call(quizzes, function (quiz) {
+                document.getElementById("quizzes").innerHTML += 
+                `
+                <tr>
+                    <td onclick="loadQuiz(${quiz.id})">${quiz.name}</td>
+                </tr>
+                `
+            });
             
         } 
     }
 
     let url = "http://127.0.0.1:5000//quizzes/" + courid + "/" + studid
-
+    console.log(url)
     xhr.open("GET", url, true)
 
     xhr.send()
 }
+function refresh(){
+    document.getElementById("quizzes").innerHTML =  
+    `            
+    <tr>
+        <th class="dataName">Quiz Name</th>
+        <th >Class</th>
+        <th >Grade</th>
+    </tr>
+    `
 
+}
 function logout(event) {
 
     event.preventDefault()
@@ -110,3 +130,9 @@ function logout(event) {
     window.location.href = "///Users/alexjones/Desktop/RevatureTraining/Project2/presentation/index.html"
     clearCookie([userId])
 }
+
+function sortOptions() {
+    var options = document.getElementById('classes').options;
+    var sorted = Array.prototype.sort.call(options, (a, b) => a.value < b.value)
+    console.log(sorted)
+    }
