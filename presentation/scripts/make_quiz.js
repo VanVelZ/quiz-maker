@@ -23,7 +23,7 @@ class Quiz {
         this.id = id
     }
 }
-function onLoad(){
+function onLoads(){
     teacherId = 6
     getCourses()
 }
@@ -79,9 +79,8 @@ function logout(event) {
     event.preventDefault()
     console.log("logout")
 
-    clearCookie([userId])
-
     window.location.href = "///Users/alexjones/Desktop/RevatureTraining/Project2/presentation/index.html"
+    clearCookie([userId])
 }
 function getQuestions() {
     let questionDescriptions = document.getElementsByClassName("questionDescription")
