@@ -14,7 +14,7 @@ class CoursesDaoImpl(CoursesDAO):
         course_list = []
         for record in records:
             courses = Courses(record[0], record[1], record[2])
-            course_list.append(courses.json())
+            course_list.append(courses)
         return course_list
 
     @staticmethod
@@ -36,5 +36,5 @@ class CoursesDaoImpl(CoursesDAO):
         courses_list = []
         for record in records:
             course = Courses(record[0], record[1], record[2])
-            courses_list.append(course.json())
+            courses_list.append(course)
         return courses_list

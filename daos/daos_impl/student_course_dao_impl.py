@@ -36,9 +36,9 @@ class StudentCourseDaoImpl(StudentCoursesDAO):
         sql = "Select course_id from student_courses where student_id =%s"
         cursor = connection.cursor()
         cursor.execute(sql, [student_id])
-        record = cursor.fetchall
+        record = cursor.fetchall()
         courses = []
         for courseID in record:
-            student_course = StudentCourses(id=courseID[0])
-            courses.append(student_course)
+            student_course = StudentCourses(courseID[0])
+            courses.append(student_course.json())
             return courses
