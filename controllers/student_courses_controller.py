@@ -9,7 +9,14 @@ def route(app):
     def get_all_student_courses():
         return jsonify(StudentCourseServices.get_all_student_courses()), 200
 
-    @app.route("/studentcourses/<student_id>", methods=['GET'])
+    @app.route("/studentcourses/<courseid>", methods=['GET'])
+    def get_all_student_courses_byid(courseid):
+        try:
+            return jsonify(StudentCourseServices.get_student_courses_byid(courseid)), 200
+        except ValueError as e:
+            return f"Invalid ID {courseid}", 400
+
+    @app.route("/loadstudentcourses/<student_id>", methods=['GET'])
     def get_all_student_courses_by_studentid(student_id):
         return jsonify(StudentCourseServices.get_student_courses_by_studentid(student_id)), 200
 

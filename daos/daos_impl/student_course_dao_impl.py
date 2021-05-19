@@ -39,7 +39,6 @@ class StudentCourseDaoImpl(StudentCoursesDAO):
         records = cursor.fetchall()
         courses = []
         for record in records:
-            print(record[2])
             student_course = StudentCourses(student_id=student_id, course_id=record[2])
             courses.append(student_course)
         return courses
