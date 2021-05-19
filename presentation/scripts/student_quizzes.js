@@ -1,4 +1,4 @@
-console.log(getCookie('userId'))
+
 getStudentClasses()
 
 function getStudentInfo() {
@@ -10,7 +10,6 @@ function getStudentInfo() {
 
         if (this.readyState == 4 && this.status == 200) {
             let user = JSON.parse(this.responseText)
-            console.log(user)
                 
         document.getElementById("studentName").innerHTML = user.firstName + " " + user.lastName
         document.getElementById("studentId").innerHTML = user.usersId
@@ -40,7 +39,6 @@ function getStudentClasses() {
             let classesRes = JSON.parse(this.responseText)
             let classes = []
             classesRes.forEach(sc => {
-                console.log(sc)
                 classes.push(getCourse(sc.courseId))
             });
 
@@ -50,7 +48,7 @@ function getStudentClasses() {
 
 
 
-    url = "http://127.0.0.1:5000/studentcourses/" + thisUserId
+    url = "http://127.0.0.1:5000/loadstudentcourses/" + thisUserId
 
     xhttp.open("GET", url, true)
     xhttp.send()
@@ -66,13 +64,38 @@ function getCourse(id){
             let course = JSON.parse(this.response)
                  document.getElementById("classes").innerHTML += 
                  `
-                     ${course.name}
+                     <option value=${id}>${course.name}</option>
                  `
+
             return course
         } 
     }
 
     let url = "http://127.0.0.1:5000//courses/" + id
+
+    xhr.open("GET", url, true)
+
+    xhr.send()
+}
+
+function findQuizzes(){
+
+    let xhr = new XMLHttpRequest();
+
+    studid = getCookie('userId')
+    
+    courid = document.getElementById("classes").value
+    console.log(courid)
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let quizzes = JSON.parse(this.response)
+            console.log(quizzes)
+                 
+            
+        } 
+    }
+
+    let url = "http://127.0.0.1:5000//quizzes/" + courid + "/" + studid
 
     xhr.open("GET", url, true)
 
