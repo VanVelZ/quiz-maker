@@ -27,3 +27,11 @@ class QuizService:
     @staticmethod
     def get_quiz(id):
         return QuizzesDaoImpl.get_quiz(id).json()
+
+    @staticmethod
+    def get_all_quizzes_for_course_for_student(course_id, student_id):
+        quizzes = QuizzesDaoImpl.get_all_quizzes_for_course_for_student(course_id, student_id)
+        quizzes_as_json = []
+        for quiz in quizzes:
+            quizzes_as_json.append(quiz.json())
+        return quizzes_as_json
