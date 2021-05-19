@@ -53,14 +53,23 @@ insert into users values(default, 'Beth', 'Steven', '100004', 'password', 1);
 
 insert into users values(default, 'Mister', 'Teacher', '200000', 'password', 2);
 insert into users values(default, 'Miss', 'Teacher', '200001', 'password', 2);
+insert into users values(default, 'Some', 'One', '200002', 'password', 2);
 
 
 insert into courses values(default, 'Physical Science', 6);
 insert into courses values(default, 'Biology', 7);
+insert into courses values(default, 'Computer Science', 6);
+insert into courses values(default, 'Potatos 101', 8);
 
 insert into student_courses values(default, 1, 1);
 insert into student_courses values(default, 2, 1);
 insert into student_courses values(default, 3, 1);
+insert into student_courses values(default, 1, 2);
+insert into student_courses values(default, 1, 3);
+insert into student_courses values(default, 5, 4);
+insert into student_courses values(default, 2, 4);
+insert into student_courses values(default, 3, 4);
+insert into student_courses values(default, 1, 4);
 
 INSERT INTO quizzes values(default, 'Light Quiz', 1);
 insert into questions values(default, 1, 'What is the speed of light?');
@@ -68,6 +77,35 @@ insert into answers  values(default, '671,000,000 mph', 1, true);
 insert into answers  values(default, '100,000 mph', 1, false);
 insert into answers  values(default, '671 mph', 1, false);
 insert into answers  values(default, '6,000 mph', 1, false);
+
+INSERT INTO quizzes values(default, 'Dark Quiz', 1);
+insert into questions values(default, 2, 'What is the speed of Dark?');
+insert into answers  values(default, '671,000,000 mph', 2, true);
+insert into answers  values(default, '100,000 mph', 2, false);
+insert into answers  values(default, '671 mph', 2, false);
+insert into answers  values(default, '6,000 mph', 2, false);
+insert into questions values(default, 2, 'Are you scared of the Dark?');
+insert into answers  values(default, 'No', 3, false);
+insert into answers  values(default, 'Definitely not', 3, false);
+insert into answers  values(default, 'okay, maybe', 3, false);
+insert into answers  values(default, 'still no', 3, true);
+insert into questions values(default, 2, 'Perfect Dark was');
+insert into answers  values(default, 'Better than Golden Eye', 4, false);
+insert into answers  values(default, 'The best shooter of its time', 4, false);
+insert into answers  values(default, 'Fun', 4, false);
+insert into answers  values(default, 'All of the above', 4, true);
+
+INSERT INTO quizzes values(default, 'Potato quiz', 4);
+insert into questions values(default, 3, 'What is the speed of potato?');
+insert into answers  values(default, '671,000,000 mph', 5, true);
+insert into answers  values(default, '100,000 mph', 5, false);
+insert into answers  values(default, '671 mph', 5, false);
+insert into answers  values(default, '6,000 mph', 5, false);
+insert into questions values(default, 3, 'What is a potato');
+insert into answers  values(default, 'A fruit', 6, false);
+insert into answers  values(default, 'Future French Fries', 6, true);
+insert into answers  values(default, 'A legume', 6, false);
+insert into answers  values(default, 'A vegetable', 6, false);
 
 alter table courses
 add constraint fk_teacher
