@@ -17,7 +17,7 @@ public class LoginController {
 
     public Handler login = (context) -> {
         Login login = gson.fromJson(context.body(), Login.class);
-        User user = new User(lr.userLogin(login.loginId, login.password));
+        User user = lr.userLogin(login.loginId, login.password);
         context.result(gson.toJson(user));
     };
 }

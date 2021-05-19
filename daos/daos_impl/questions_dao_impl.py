@@ -26,10 +26,22 @@ class QuestionDaoImpl(QuestionsDAO):
     def create_question(question:Questions, quiz_id, commit=True):
         sql = "insert into questions values (default, %s, %s) returning id"
         cursor = connection.cursor()
-        cursor.execute(sql, [question.description,
-                             quiz_id])
+        cursor.execute(sql, [quiz_id,
+                             question.description])
+        connection.commit() if commit else connection.rollback()
         id = cursor.fetchone()
         for answer in question.answers:
-            AnswersDaoImpl.create_answer(answer, question.id)
+            AnswersDaoImpl.create_answer(answer, id)
+        return True
+
+    @staticmethod
+    def submit_question(question:Questions, user_id, commit=True):
+        sql = "insert into student_questions values (default, %s, %s, %s)"
+        cursor = connection.cursor()
+        cursor.execute(sql, [user_id,
+                             question.id,
+                             question.students_answer.id])
         connection.commit() if commit else connection.rollback()
         return True
+
+

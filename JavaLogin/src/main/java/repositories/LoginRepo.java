@@ -1,5 +1,6 @@
 package repositories;
 
+import models.User;
 import util.JDBC;
 
 import java.sql.Connection;
@@ -10,9 +11,9 @@ import java.sql.SQLException;
 public class LoginRepo {
     public static Connection conn = JDBC.getConnection();
 
-    public int userLogin(String loginId, String password) {
+    public User userLogin(String loginId, String password) {
         try {
-            String sql = "SELECT id FROM users WHERE login_id = ? and password = ?";
+            String sql = "SELECT id, role_id FROM users WHERE login_id = ? and password = ?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, loginId);
@@ -21,14 +22,16 @@ public class LoginRepo {
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
-                return rs.getInt("id");
+                int userId = rs.getInt("id");
+                int roleId = rs.getInt("role_id");
+                return new User(userId, roleId);
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return -1;
+        return null;
     }
 
 }

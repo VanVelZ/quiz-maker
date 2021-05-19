@@ -2,8 +2,121 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffc5a162-4e73-47b9-b76d-7e79f1995e27" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__com_beust_jcommander_1_48.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__com_google_code_findbugs_jsr305_1_3_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__com_google_code_gson_gson_2_8_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_0_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__com_google_guava_guava_23_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__com_squareup_okio_okio_1_14_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__commons_codec_commons_codec_1_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__info_cukes_cucumber_core_1_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__info_cukes_cucumber_html_0_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__info_cukes_cucumber_java_1_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__info_cukes_cucumber_jvm_deps_1_0_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__info_cukes_cucumber_testng_1_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__info_cukes_gherkin_2_12_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__io_javalin_javalin_3_13_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_apache_commons_commons_exec_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_beanshell_bsh_2_0b4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_checkerframework_checker_qual_3_5_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_eclipse_jetty_jetty_client_9_4_39_v20210325.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_eclipse_jetty_jetty_http_9_4_39_v20210325.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_eclipse_jetty_jetty_io_9_4_39_v20210325.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_eclipse_jetty_jetty_security_9_4_39_v20210325.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_eclipse_jetty_jetty_server_9_4_39_v20210325.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_eclipse_jetty_jetty_servlet_9_4_39_v20210325.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_eclipse_jetty_jetty_util_9_4_39_v20210325.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_eclipse_jetty_jetty_util_ajax_9_4_39_v20210325.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_eclipse_jetty_jetty_webapp_9_4_39_v20210325.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_eclipse_jetty_jetty_xml_9_4_39_v20210325.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_api_9_4_39_v20210325.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_client_9_4_39_v20210325.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_common_9_4_39_v20210325.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_server_9_4_39_v20210325.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_servlet_9_4_39_v20210325.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_jetbrains_annotations_13_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_1_3_71.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_71.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_3_71.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_jdk8_1_3_71.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_postgresql_postgresql_42_2_20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_api_3_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_chrome_driver_3_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_edge_driver_3_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_firefox_driver_3_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_ie_driver_3_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_java_3_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_opera_driver_3_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_remote_driver_3_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_safari_driver_3_141_59.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_support_3_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_30.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_slf4j_slf4j_simple_1_7_30.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/libraries/Maven__org_testng_testng_6_9_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/JavaLogin.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/src/main/java/tests/LoginRepoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/src/main/java/tests/behavior/LoginRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/src/main/java/tests/pages/LoginPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/src/main/java/tests/resources/loginPage.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/src/main/java/tests/steps/LoginSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/target/classes/app/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/target/classes/controllers/LoginController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/target/classes/models/Login.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/target/classes/models/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/target/classes/repositories/LoginRepo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/target/classes/tests/LoginRepoTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/target/classes/tests/behavior/LoginRunner.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/target/classes/tests/pages/LoginPage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/target/classes/tests/steps/LoginSteps.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaLogin/target/classes/util/JDBC.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/courses_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Project2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaLogin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaLogin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaLogin/src/main/java/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaLogin/src/main/java/app/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaLogin/src/main/java/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaLogin/src/main/java/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaLogin/src/main/java/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaLogin/src/main/java/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaLogin/src/main/java/repositories/LoginRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaLogin/src/main/java/repositories/LoginRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/app_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/app_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/course_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/course_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/quiz_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/quiz_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/daos/courses_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/daos/courses_dao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daos/daos_impl/answers_dao_impl.py" beforeDir="false" afterPath="$PROJECT_DIR$/daos/daos_impl/answers_dao_impl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daos/daos_impl/courses_dao_impl.py" beforeDir="false" afterPath="$PROJECT_DIR$/daos/daos_impl/courses_dao_impl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daos/daos_impl/questions_dao_impl.py" beforeDir="false" afterPath="$PROJECT_DIR$/daos/daos_impl/questions_dao_impl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daos/daos_impl/quizzes_dao_impl.py" beforeDir="false" afterPath="$PROJECT_DIR$/daos/daos_impl/quizzes_dao_impl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daos/daos_impl/user_dao_impl.py" beforeDir="false" afterPath="$PROJECT_DIR$/daos/daos_impl/user_dao_impl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/questions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/quizzes.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/quizzes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes&amp;stuff/db_init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/notes&amp;stuff/db_init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/make_quiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/make_quiz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/review_quiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/review_quiz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/scripts/index_scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/scripts/index_scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/student_quizzes.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/student_quizzes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/take_quiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/take_quiz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/teacher_quizzes.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/teacher_quizzes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/courses_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/courses_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/courses_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/courses_services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/quiz_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/quiz_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +151,7 @@
       <recent name="C:\Users\adoko\Documents\Java Raveture notes\Project2\exceptions" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.app">
+  <component name="RunManager">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Project2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -123,14 +236,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.app" />
-        <item itemvalue="Python.first_page_controller" />
-        <item itemvalue="Python.courses_services" />
-        <item itemvalue="Python.user_dao_impl" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
