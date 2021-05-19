@@ -1,8 +1,8 @@
-from daos.daos_impl.answers_dao_impl import AnswersDAOImpl
+from daos.daos_impl.answers_dao_impl import AnswersDaoImpl
 
 
 class AnswersServices:
-    answers_dao = AnswersDAOImpl()
+    answers_dao = AnswersDaoImpl()
 
     @classmethod
     def get_all_answers(cls):

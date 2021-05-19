@@ -1,5 +1,5 @@
 from flask_cors import CORS
-from controllers import quiz_controller
+from controllers import quiz_controller, answers_controller, questions_controller, student_courses_controller, student_questions_controller
 from controllers import course_controller
 from controllers import user_controller
 
