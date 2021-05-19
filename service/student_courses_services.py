@@ -1,3 +1,4 @@
+from daos.student_course_dao import StudentCoursesDAO
 from daos.daos_impl.student_course_dao_impl import StudentCourseDaoImpl
 
 
@@ -10,8 +11,16 @@ class StudentCourseServices:
 
     @classmethod
     def get_student_courses_byid(cls, courseid):
-        return cls.studentcourse_dao.get_courses_by_id(courseid)
+        courses = cls.studentcourse_dao.get_courses_by_id(courseid)
+        json_courses = []
+        for course in courses:
+            json_courses.append(course.json)
+        return json_courses
 
-    @classmethod
-    def get_student_courses_by_studentid(cls, student_id):
-        return cls.studentcourse_dao.load_courses_for_student(student_id)
+    @staticmethod
+    def get_student_courses_by_studentid(student_id):
+        courses = StudentCourseDaoImpl.load_courses_for_student(student_id)
+        json_courses = []
+        for course in courses:
+            json_courses.append(course.json())
+        return json_courses
