@@ -18,7 +18,7 @@ class QuestionDaoImpl(QuestionsDAO):
 
         for record in records:
             question: Questions = Questions(id=record[0], description=record[2])
-            question.answers = AnswersDaoImpl.get_all_answers_for_question(question.id)
+            question.answers = AnswersDAOImpl.get_all_answers_for_question(question.id)
             questions.append(question)
         return questions
 
