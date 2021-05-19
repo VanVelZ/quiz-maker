@@ -40,5 +40,5 @@ class StudentCourseDaoImpl(StudentCoursesDAO):
         courses = []
         for courseID in record:
             student_course = StudentCourses(courseID[0])
-            courses.append(student_course.json())
+            courses.append(student_course)
             return courses
