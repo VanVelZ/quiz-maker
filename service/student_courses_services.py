@@ -5,8 +5,8 @@ class StudentCourseServices:
     studentcourse_dao = StudentCourseDaoImpl()
 
     @classmethod
-    def get_all_students_courses(cls):
-        return cls.studentcourse_dao.get_all_students_courses()
+    def get_all_student_courses(cls):
+        return cls.studentcourse_dao.get_all_student_courses()
 
     @classmethod
     def get_student_courses_byid(cls, courseid):

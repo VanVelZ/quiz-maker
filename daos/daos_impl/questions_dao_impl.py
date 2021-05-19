@@ -1,4 +1,4 @@
-from daos.daos_impl.answers_dao_impl import AnswersDAOImpl
+from daos.daos_impl.answers_dao_impl import AnswersDaoImpl
 from daos.questions_dao import QuestionsDAO
 from models.questions import Questions
 from util.db_connection import create_connection
@@ -6,7 +6,7 @@ from util.db_connection import create_connection
 connection = create_connection()
 
 
-class QuestionDAOImpl(QuestionsDAO):
+class QuestionDaoImpl(QuestionsDAO):
 
     @staticmethod
     def get_all_questions_for_quiz(quiz_id):
@@ -31,7 +31,7 @@ class QuestionDAOImpl(QuestionsDAO):
         connection.commit() if commit else connection.rollback()
         id = cursor.fetchone()
         for answer in question.answers:
-            AnswersDAOImpl.create_answer(answer, id)
+            AnswersDaoImpl.create_answer(answer, id)
         return True
 
     @staticmethod
