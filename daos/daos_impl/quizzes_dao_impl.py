@@ -20,7 +20,6 @@ class QuizzesDaoImpl(QuizesDAO):
         for record in records:
             quiz = Quizzes(id=record[0], name=record[1], course_id=record[2])
             quiz.questions = QuestionDAOImpl.get_all_questions_for_quiz(quiz.id)
-            
             quizzes.append(quiz)
         return quizzes
 
@@ -71,12 +70,12 @@ class QuizzesDaoImpl(QuizesDAO):
         for record in records:
             quiz = Quizzes(id=record[0], name=record[1], course_id=record[2])
             quiz.questions = QuestionDAOImpl.get_all_questions_for_quiz(quiz.id)
-            #Skip loading the quiz if the student has taken it already
-            if(QuizzesDaoImpl.get_quiz_review(quiz.id, student_id)):
-                break
+            if QuizzesDaoImpl.get_quiz_review(quiz.id, student_id).grade:
+                continue
             quizzes.append(quiz)
         return quizzes
 
 
 if __name__ == '__main__':
-    print(QuizzesDaoImpl.create_quiz(Quizzes(name="New Quiz")))
+    print(QuizzesDaoImpl.get_all_quizzes_for_course(1))
+    print(QuizzesDaoImpl.get_all_quizzes_for_course_for_student(1, 1))

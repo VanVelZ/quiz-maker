@@ -19,7 +19,7 @@ class QuestionDAOImpl(QuestionsDAO):
         for record in records:
             question: Questions = Questions(id=record[0], description=record[2])
             question.answers = AnswersDAOImpl.get_all_answers_for_question(question.id)
-            questions.append(str(question)), 200
+            questions.append(question)
         return questions
 
     @staticmethod
