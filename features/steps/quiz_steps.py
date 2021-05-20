@@ -1,3 +1,4 @@
+
 @given(u'The User is logged in')
 def step_impl(context):
     raise NotImplementedError(u'STEP: Given The User is logged in')
@@ -86,3 +87,4 @@ def step_impl(context):
 @then(u'User views the test')
 def step_impl(context):
     raise NotImplementedError(u'STEP: Then User views the test')
+

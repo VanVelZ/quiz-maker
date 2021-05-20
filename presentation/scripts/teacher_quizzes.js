@@ -1,7 +1,7 @@
 function logout(event) {
 
     event.preventDefault()
-    window.location.href = "///Users/alexjones/Desktop/RevatureTraining/Project2/presentation/index.html"
+    window.location.href = "index.html"
     clearCookie([userId])
 }
 
