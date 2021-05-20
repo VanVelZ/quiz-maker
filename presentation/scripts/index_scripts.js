@@ -35,7 +35,7 @@ function login() {
 
     }
 
-    url = url = "http://127.0.0.1:7001/login"
+    url = "http://127.0.0.1:7001/login"
 
     xhttp.open("POST", url, true)
     xhttp.setRequestHeader('Content-type','application/json')
@@ -43,7 +43,6 @@ function login() {
     
 
 }
-clearCookie(userId)
 
 // {
 //     "loginId": "100001",

@@ -73,9 +73,26 @@ class QuizzesDaoImpl(QuizesDAO):
                 continue
             quizzes.append(quiz)
         return quizzes
+    
+    @staticmethod
+    def get_all_reviews_for_course_for_student(course_id, student_id):
+        sql = "Select * from quizzes where course_id=%s"
+        cursor = connection.cursor()
+        cursor.execute(sql, [course_id])
+        records = cursor.fetchall()
+        quizzes = []
+
+        for record in records:
+            quiz = Quizzes(id=record[0], name=record[1], course_id=record[2])
+            review = QuizzesDaoImpl.get_quiz_review(quiz.id, student_id)
+            if review.grade is None:
+                continue
+            quizzes.append(review)
+        return quizzes
 
 
 if __name__ == '__main__':
     print(QuizzesDaoImpl.get_all_quizzes_for_course(1))
+    print(QuizzesDaoImpl.get_all_reviews_for_course_for_student(1, 1))
     print(QuizzesDaoImpl.get_all_quizzes_for_course_for_student(1, 1))
 

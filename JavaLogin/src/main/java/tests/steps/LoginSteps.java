@@ -4,8 +4,11 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import tests.behavior.LoginRunner;
 import tests.pages.LoginPage;
+
+import java.util.concurrent.TimeUnit;
 
 public class LoginSteps {
 
@@ -34,8 +37,10 @@ public class LoginSteps {
     }
 
     @Then("^The user is redirected the main page$")
-    public void the_user_is_redirected_the_main_page() {
-        assert !driver.getTitle().equals("Login");
+    public void the_user_is_redirected_the_main_page() throws InterruptedException {
+        //Titles are always on the screen so I couldnt find a better strategy than sleeping
+        Thread.sleep(1000);
+        assert !driver.getTitle().equals("Quiz Maker");
     }
 
 }

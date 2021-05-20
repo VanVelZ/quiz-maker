@@ -68,13 +68,14 @@ function submitQuiz(){
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
+            review = JSON.parse(this.response)
         reviewQuiz(review)
         }
 }
 
 
 
-let url  = "http://127.0.0.1:5000/quizzes/" + userId
+let url  = "http://127.0.0.1:5000/quiz/" + userId
 
 xhttp.open("POST", url, true)
 xhttp.setRequestHeader('Content-type','application/json')
