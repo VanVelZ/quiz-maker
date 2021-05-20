@@ -5,5 +5,5 @@ class QuestionsServices:
     questions_dao = QuestionDaoImpl()
 
     @classmethod
-    def get_all_questions(cls):
-        return cls.questions_dao.get_all_questions()
+    def get_all_questions(cls, quiz_id):
+        return cls.questions_dao.get_all_questions_for_quiz(quiz_id)

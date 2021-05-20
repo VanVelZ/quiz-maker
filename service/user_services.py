@@ -23,4 +23,3 @@ class UserService:
     @classmethod
     def delete_user(cls, userid):
         return cls.user_dao.delete_user(userid)
-
