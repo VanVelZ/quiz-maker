@@ -85,11 +85,9 @@ function findQuizzes(){
     studid = getCookie('userId')
     
     courid = document.getElementById("classes").value
-    console.log(courid)
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let quizzes = JSON.parse(this.response)
-            console.log(quizzes)
                  
             
         } 
@@ -105,7 +103,6 @@ function findQuizzes(){
 function logout(event) {
 
     event.preventDefault()
-    console.log("logout")
 
     window.location.href = "///Users/alexjones/Desktop/RevatureTraining/Project2/presentation/index.html"
     clearCookie([userId])
