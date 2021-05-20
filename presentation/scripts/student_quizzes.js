@@ -116,7 +116,7 @@ function todoQuizzes(){
                 document.getElementById("quizzes").innerHTML += 
                 `
                 <tr>
-                    <td onclick="loadQuiz(${quiz.id})">${quiz.name}</td>
+                    <td onclick="loadQuiz(${quiz.id})" class="quizName">${quiz.name}</td>
                     <td>-</td>
                 </tr>
                 `
@@ -170,9 +170,3 @@ function logout(event) {
     window.location.href = "///Users/alexjones/Desktop/RevatureTraining/Project2/presentation/index.html"
     clearCookie([userId])
 }
-
-function sortOptions() {
-    var options = document.getElementById('classes').options;
-    var sorted = Array.prototype.sort.call(options, (a, b) => a.value < b.value)
-    console.log(sorted)
-    }
