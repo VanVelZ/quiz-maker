@@ -16,3 +16,9 @@ class CoursesService:
     @classmethod
     def get_course_by_teacher_id(cls, teacher_id):
         return cls.courses_dao.get_courses_by_teacher_id(teacher_id)
+    
+    @staticmethod
+    def get_student_grade(course_id, student_id):
+        return {
+             "grade": CoursesDaoImpl.get_student_grade(course_id, student_id)
+        }
