@@ -1,6 +1,5 @@
 
 getStudentClasses()
-findQuizzes()
 function getStudentInfo() {
    
     thisUserId = getCookie('userId')
@@ -36,9 +35,8 @@ function getStudentClasses() {
 
         if (this.readyState == 4 && this.status == 200) {
             let classesRes = JSON.parse(this.responseText)
-            var classes = []
             classesRes.forEach(sc => {
-                classes.push(getCourse(sc.courseId))
+                getCourse(sc.courseId)
             });
         }
 
