@@ -50,4 +50,7 @@ class CoursesDaoImpl(CoursesDAO):
             if reviewed_quiz.grade is not None: reviewed_quizzes.append(reviewed_quiz)
         for quiz in reviewed_quizzes:
             student_grade += quiz.grade
-        return student_grade / len(reviewed_quizzes)
+        try:
+            return student_grade / len(reviewed_quizzes)
+        except ZeroDivisionError:
+            return "No grade"
