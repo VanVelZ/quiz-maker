@@ -1,5 +1,6 @@
 from models.courses import Courses
 from daos.courses_dao import CoursesDAO
+from daos.daos_impl.quizzes_dao_impl import QuizzesDaoImpl
 from util.db_connection import connection
 
 
@@ -38,3 +39,18 @@ class CoursesDaoImpl(CoursesDAO):
             course = Courses(record[0], record[1], record[2])
             courses_list.append(course)
         return courses_list
+    
+    @staticmethod
+    def get_student_grade(course_id, student_id):
+        quizzes = QuizzesDaoImpl.get_all_quizzes_for_course(course_id)
+        reviewed_quizzes = []
+        student_grade = 0
+        for quiz in quizzes:
+            reviewed_quiz = QuizzesDaoImpl.get_quiz_review(quiz.id, student_id)
+            if reviewed_quiz.grade is not None: reviewed_quizzes.append(reviewed_quiz)
+        for quiz in reviewed_quizzes:
+            student_grade += quiz.grade
+        try:
+            return student_grade / len(reviewed_quizzes)
+        except ZeroDivisionError:
+            return "No grade"

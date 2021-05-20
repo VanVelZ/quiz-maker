@@ -67,7 +67,7 @@ function getCourse(id){
         } 
     }
 
-    let url = "http://127.0.0.1:5000//courses/" + id
+    let url = "http://127.0.0.1:5000/courses/" + id
 
     xhr.open("GET", url, true)
 
@@ -80,15 +80,32 @@ function loadQuiz(quizId){
 }
 function findQuizzes(){
     refresh()
+    courid = document.getElementById("classes").value
+    studid = getCookie('userId') 
     todoQuizzes()
     finishedQuizzes()
+    loadGrade()
+}
+
+function loadGrade(){
+    let xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let grade = JSON.parse(this.response)
+            document.getElementById("classGrade").innerHTML = `Grade: ${grade.grade}`
+        } 
+    }
+
+    let url = "http://127.0.0.1:5000/courses/" + courid + "/" + studid
+    xhr.open("GET", url, true)
+
+    xhr.send()
+    
 }
 function todoQuizzes(){
     let xhr = new XMLHttpRequest();
-
-    studid = getCookie('userId')
     
-    let courid = document.getElementById("classes").value  
     refresh()
     console.log(courid)
     xhr.onreadystatechange = function () {
@@ -107,8 +124,7 @@ function todoQuizzes(){
         } 
     }
 
-    let url = "http://127.0.0.1:5000//quizzes/" + courid + "/" + studid
-    console.log(url)
+    let url = "http://127.0.0.1:5000/quizzes/" + courid + "/" + studid
     xhr.open("GET", url, true)
 
     xhr.send()
@@ -116,10 +132,6 @@ function todoQuizzes(){
 function finishedQuizzes(){
     let xhr = new XMLHttpRequest();
 
-    studid = getCookie('userId')
-    
-    let courid = document.getElementById("classes").value  
-    console.log(courid)
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let quizzes = JSON.parse(this.response)
@@ -136,7 +148,7 @@ function finishedQuizzes(){
         } 
     }
 
-    let url = "http://127.0.0.1:5000//reviews/" + courid + "/" + studid
+    let url = "http://127.0.0.1:5000/reviews/" + courid + "/" + studid
     xhr.open("GET", url, true)
 
     xhr.send()
