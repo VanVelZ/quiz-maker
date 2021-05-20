@@ -78,8 +78,12 @@ function loadQuiz(quizId){
     setCookie([new Cookie("userId", thisUserId), new Cookie("quizId", quizId)])
     location.href = "take_quiz.html"
 }
-
 function findQuizzes(){
+    refresh()
+    todoQuizzes()
+    finishedQuizzes()
+}
+function todoQuizzes(){
     let xhr = new XMLHttpRequest();
 
     studid = getCookie('userId')
@@ -96,6 +100,7 @@ function findQuizzes(){
                 `
                 <tr>
                     <td onclick="loadQuiz(${quiz.id})">${quiz.name}</td>
+                    <td>-</td>
                 </tr>
                 `
             });
@@ -109,12 +114,39 @@ function findQuizzes(){
 
     xhr.send()
 }
+function finishedQuizzes(){
+    let xhr = new XMLHttpRequest();
+
+    studid = getCookie('userId')
+    
+    let courid = document.getElementById("classes").value  
+    console.log(courid)
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let quizzes = JSON.parse(this.response)
+            console.log(quizzes)
+            Array.prototype.forEach.call(quizzes, function (quiz) {
+                document.getElementById("quizzes").innerHTML += 
+                `
+                <tr>
+                    <td>${quiz.name}</td>
+                    <td>${quiz.grade}</td>
+                </tr>
+                `
+            });
+        } 
+    }
+
+    let url = "http://127.0.0.1:5000//reviews/" + courid + "/" + studid
+    xhr.open("GET", url, true)
+
+    xhr.send()
+}
 function refresh(){
     document.getElementById("quizzes").innerHTML =  
     `            
     <tr>
         <th class="dataName">Quiz Name</th>
-        <th >Class</th>
         <th >Grade</th>
     </tr>
     `
