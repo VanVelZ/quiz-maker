@@ -1,7 +1,6 @@
 function logout(event) {
 
     event.preventDefault()
-    console.log("logout")
     window.location.href = "///Users/alexjones/Desktop/RevatureTraining/Project2/presentation/index.html"
     clearCookie([userId])
 }
@@ -15,7 +14,6 @@ function getTeacherInfo() {
 
         if (this.readyState == 4 && this.status == 200) {
             let user = JSON.parse(this.responseText)
-            console.log(user)
                 
         document.getElementById("teacherName").innerHTML = user.firstName + " " + user.lastName
         document.getElementById("teacherId").innerHTML = user.usersId

@@ -34,7 +34,7 @@ function getCourses(){
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let courses = JSON.parse(this.response)
-            console.log(courses)
+
             Array.prototype.forEach.call(courses, function (course) {
                 document.getElementById("courseSelect").innerHTML = `
                     <option value=${course.coursesId}>${course.name}</option>
@@ -60,7 +60,6 @@ function submitQuiz(){
 
     xhttp.onreadystatechange = function () {
             
-        console.log(this.response)
 
 }
 
@@ -69,7 +68,6 @@ function submitQuiz(){
 let url  = "http://127.0.0.1:5000/quiz/"
 
 xhttp.open("PUT", url, true)
-console.log(json)
 xhttp.setRequestHeader('Content-type','application/json')
 xhttp.send(json)
 
@@ -77,7 +75,6 @@ xhttp.send(json)
 function logout(event) {
 
     event.preventDefault()
-    console.log("logout")
 
     window.location.href = "///Users/alexjones/Desktop/RevatureTraining/Project2/presentation/index.html"
     clearCookie([userId])
@@ -92,7 +89,6 @@ function getQuestions() {
         questions.push(question)
         count++
     });
-    console.log(questions)
     return questions
 }
 function getAnswersFor(question){
