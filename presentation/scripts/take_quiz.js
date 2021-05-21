@@ -38,19 +38,19 @@ function displayQuiz(quiz){
         </tr>
         <tr>
             <td id="a1_1">${question.answers[0].description}</td>
-            <td id="option1_1Radio"> A <input type="radio" name="q${question.id}Radio" value="${question.answers[0].id}"></td>
+            <td id="option${questionCount}_1Radio"> A <input type="radio" name="q${question.id}Radio" value="${question.answers[0].id}"></td>
         </tr>
         <tr>
             <td id="a1_2">${question.answers[1].description}</td>
-            <td id="option1_2Radio"> B <input type="radio" name="q${question.id}Radio" value="${question.answers[1].id}"></td>
+            <td id="option${questionCount}_2Radio"> B <input type="radio" name="q${question.id}Radio" value="${question.answers[1].id}"></td>
         </tr>
         <tr>
             <td id="a1_3">${question.answers[2].description}</td>
-            <td id="option1_3Radio"> C <input type="radio" name="q${question.id}Radio" value="${question.answers[2].id}"></td>
+            <td id="option${questionCount}_3Radio"> C <input type="radio" name="q${question.id}Radio" value="${question.answers[2].id}"></td>
         </tr>
         <tr>
             <td id="a1_4">${question.answers[3].description}</td>
-            <td id="option1_4Radio"> D <input type="radio" name="q${question.id}Radio" value="${question.answers[3].id}"></td>
+            <td id="option${questionCount}_4Radio"> D <input type="radio" name="q${question.id}Radio" value="${question.answers[3].id}"></td>
         </tr>
         `
         questionCount += 1
@@ -102,6 +102,6 @@ function getStudentAnswersFor(question){
 function reviewQuiz(quiz){
     document.getElementById("quiz").innerHTML = 
     `
-    <h1>You scored ${quiz.grade}%</h1>
+    <h1 id="quizResults">You scored ${quiz.grade}%</h1>
     `
 }
