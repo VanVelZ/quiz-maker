@@ -1,3 +1,9 @@
+from behave import given, when, then
+from selenium.webdriver.safari.webdriver import WebDriver
+from selenium.webdriver.common import keys
+from time import sleep
+
+from selenium.webdriver.common.keys import Keys
 
 @given(u'The User is logged in')
 def step_impl(context):
