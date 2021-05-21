@@ -1,4 +1,6 @@
 from selenium.webdriver.safari.webdriver import WebDriver
+from selenium.webdriver.support.select import Select
+
 
 class QuizHomePage:
 
@@ -21,32 +23,47 @@ class QuizHomePage:
         return self.driver.find_element_by_id('studentName')
 
     def classesDisplay(self):
-        return self.driver.find_element_by_id('classes')
+        return Select(self.driver.find_element_by_id('classes'))
+
+    def teacherClassDisplay(self):
+        return Select(self.driver.find_element_by_id("courseSelect"))
+
+    def classGrade(self):
+        return self.driver.find_element_by_id("classGrade")
+
+    def quizName(self):
+        return self.driver.find_element_by_id('quizName')
 
     def selectQuiz(self):
-        return self.driver.find_elements_by_class_name('quizName')
+        return self.driver.find_elements_by_class_name("quizName")
 
     def Question1(self):
-        return self.driver.find_elements_by_class_name('q1')
+        return self.driver.find_element_by_id('q1Description')
 
     def answer1(self):
-        return self.driver.find_elements_by_class_name('a1_1')
+        return self.driver.find_element_by_id('a1_1')
 
     def answer2(self):
-        return self.driver.find_elements_by_class_name('a1_2')
+        return self.driver.find_element_by_id('a1_2')
 
     def answer3(self):
-        return self.driver.find_elements_by_class_name('a1_3')
+        return self.driver.find_element_by_id('a1_3')
 
     def answer4(self):
-        return self.driver.find_elements_by_class_name('aq_4')
+        return self.driver.find_element_by_id('a1_4')
 
-    def answer4Radio(self):
-        return self.driver.find_elements_by_class_name('option1_4Radio')
+    def answer1Radio(self):
+        return self.driver.find_element_by_xpath('//*[@id="option1_1Radio"]/input')
+
+    def quizResults(self):
+        return self.driver.find_element_by_id("quizResults")
+
+    def answer2Radio(self):
+        return self.driver.find_element_by_xpath('//*[@id="option2_1Radio"]/input')
 
     def makeQuizButton(self):
-        return self.driver.find_elements_by_class_name('makeQuizButton')
+        return self.driver.find_element_by_id('makeQuizButton')
 
     def submitQuizButton(self):
-        return self.driver.find_elements_by_class_name('submitQuiz')
+        return self.driver.find_element_by_id('submitQuiz')
 
