@@ -28,7 +28,7 @@ function login() {
             if (user.roleId == 1){
                 window.location.href = "student_quizzes.html"
             } else {
-                window.location.href = "teacher_quizzes.html"
+                window.location.href = "make_quiz.html"
             }
 
         }
