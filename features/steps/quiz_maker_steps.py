@@ -5,59 +5,45 @@ from time import sleep
 
 from selenium.webdriver.common.keys import Keys
 
+
 @given(u'The User is logged in')
 def step_impl(context):
     raise NotImplementedError(u'STEP: Given The User is logged in')
 
 
-@when(u'The User clicks on view tests')
+@when(u'The User selects a course')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: When The User clicks on view tests')
+    raise NotImplementedError(u'STEP: When The User selects a course')
 
 
-@then(u'The User views the list of test')
+@then(u'The User view a list of test with grades')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Then The User views the list of test')
+    raise NotImplementedError(u'STEP: Then The User view a list of test with grades')
 
 
-@given(u'The User is viewing the tests')
+@then(u'The user sees their cumulative grade')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Given The User is viewing the tests')
+    raise NotImplementedError(u'STEP: Then The user sees their cumulative grade')
 
 
-@when(u'The User selects a test')
+@given(u'The Teacher is logged in')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: When The User selects a test')
+    raise NotImplementedError(u'STEP: Given The Teacher is logged in')
 
 
-@then(u'The User views the grade on the test')
+@when(u'The user fills out quiz info')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Then The User views the grade on the test')
+    raise NotImplementedError(u'STEP: When The user fills out quiz info')
 
 
-@given(u'The User login')
+@then(u'The page is refreshed')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Given The User login')
+    raise NotImplementedError(u'STEP: Then The page is refreshed')
 
 
-@given(u'User is on the home page')
+@when(u'The user selects a course')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Given User is on the home page')
-
-
-@then(u'User views the accumulative grade')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: Then User views the accumulative grade')
-
-
-@given(u'Users login')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: Given Users login')
-
-
-@then(u'User views the test results')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: Then User views the test results')
+    raise NotImplementedError(u'STEP: When The user selects a course')
 
 
 @when(u'The User clicks a test')
@@ -65,32 +51,21 @@ def step_impl(context):
     raise NotImplementedError(u'STEP: When The User clicks a test')
 
 
-@then(u'The User views the test')
+@when(u'The User answers the question')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Then The User views the test')
+    raise NotImplementedError(u'STEP: When The User answers the question')
 
 
-@given(u'The User is viewing the test')
+@then(u'The User views the test results')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Given The User is viewing the test')
+    raise NotImplementedError(u'STEP: Then The User views the test results')
 
 
-@when(u'The User answers the questions')
+@given(u'User is on the home page')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: When The User answers the questions')
-
-
-@when(u'The User clicks on the submit button')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: When The User clicks on the submit button')
-
-
-@then(u'The User views their score')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: Then The User views their score')
+    raise NotImplementedError(u'STEP: Given User is on the home page')
 
 
 @then(u'User views the test')
 def step_impl(context):
     raise NotImplementedError(u'STEP: Then User views the test')
-
