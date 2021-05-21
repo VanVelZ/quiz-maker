@@ -21,11 +21,6 @@ def step_impl(context):
     raise NotImplementedError(u'STEP: Then The User view a list of test with grades')
 
 
-@when(u'The user selects a course')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: When The user selects a course')
-
-
 @then(u'The user sees their cumulative grade')
 def step_impl(context):
     raise NotImplementedError(u'STEP: Then The user sees their cumulative grade')
@@ -46,6 +41,11 @@ def step_impl(context):
     raise NotImplementedError(u'STEP: Then The page is refreshed')
 
 
+@when(u'The user selects a course')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: When The user selects a course')
+
+
 @when(u'The User clicks a test')
 def step_impl(context):
     raise NotImplementedError(u'STEP: When The User clicks a test')
@@ -59,11 +59,6 @@ def step_impl(context):
 @then(u'The User views the test results')
 def step_impl(context):
     raise NotImplementedError(u'STEP: Then The User views the test results')
-
-
-@given(u'Users login')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: Given Users login')
 
 
 @given(u'User is on the home page')
