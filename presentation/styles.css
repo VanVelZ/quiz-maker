@@ -49,6 +49,17 @@ h3 {
   font-size: 16px;
   } */
 
+table {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: left;
+  margin: 10px;
+}
+
+input[type="text"] {
+  width: 470px;
+}
+
 .container {
   background-color: #c3bef0;
   padding: 6px;
@@ -59,18 +70,25 @@ h3 {
   position: fixed;
   bottom: 0;
 }
-
-table {
-  padding: 6px;
-  border: 1px solid #ccc;
-  text-align: left;
-  margin: 10px;
-}
-
 .dataName {
   width: 500px;
 }
 
-input[type="text"] {
-  width: 470px;
+.spaceButton {
+  padding-left: 1%;
+}
+
+#sign-in-form {
+  font-family: "Montserrat", sans-serif;
+  font-size: rem;
+  line-height: 1.5;
+  padding: 1%;
+}
+
+#logoutButton {
+  margin: 0 0 2px 1%;
+}
+
+#quizName {
+  margin: 1%;
 }
