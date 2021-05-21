@@ -50,26 +50,27 @@ function getCourses(){
     xhr.send()
 }
 function submitQuiz(){
-    let quizName = document.getElementById("quizName").value
-    let courseId = document.getElementById("courseSelect").value
-    let quiz = new Quiz(quizName, courseId, getQuestions())
-    let json = JSON.stringify(quiz)
+        let quizName = document.getElementById("quizName").value
+        let courseId = document.getElementById("courseSelect").value
+        let quiz = new Quiz(quizName, courseId, getQuestions())
+        let json = JSON.stringify(quiz)
 
-    let xhttp = new XMLHttpRequest();
-
-
-    xhttp.onreadystatechange = function () {
-            
-
-}
+        let xhttp = new XMLHttpRequest();
 
 
+        xhttp.onreadystatechange = function () {
+        
+        window.location.href = "make_quiz.html"
 
-let url  = "http://127.0.0.1:5000/quiz/"
+    }
 
-xhttp.open("PUT", url, true)
-xhttp.setRequestHeader('Content-type','application/json')
-xhttp.send(json)
+
+
+    let url  = "http://127.0.0.1:5000/quiz/"
+
+    xhttp.open("PUT", url, true)
+    xhttp.setRequestHeader('Content-type','application/json')
+    xhttp.send(json)
 
 }
 function logout(event) {
