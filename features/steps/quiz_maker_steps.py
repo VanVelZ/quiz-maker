@@ -5,15 +5,24 @@ from time import sleep
 
 from selenium.webdriver.common.keys import Keys
 
+from features.pages.quiz_home_page import QuizHomePage
+
 
 @given(u'The User is logged in')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Given The User is logged in')
+    driver: WebDriver = context.driver
+    driver.get("file:///Users/prozachrx/Desktop/quiz-maker/presentation/index.html")
+    driver.implicitly_wait(6)
+    page: QuizHomePage = context.quiz_page
+    page.loginName().send_keys("100000")
+    page.loginPassword().send_keys("password")
+    page.loginButton().click()
 
 
 @when(u'The User selects a course')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: When The User selects a course')
+    quiz_page: QuizHomePage = context.quiz_page
+    quiz_page.classesDisplay()[1].click()
 
 
 @then(u'The User view a list of test with grades')
@@ -39,11 +48,6 @@ def step_impl(context):
 @then(u'The page is refreshed')
 def step_impl(context):
     raise NotImplementedError(u'STEP: Then The page is refreshed')
-
-
-@when(u'The user selects a course')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: When The user selects a course')
 
 
 @when(u'The User clicks a test')
