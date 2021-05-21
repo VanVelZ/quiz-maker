@@ -1,4 +1,4 @@
-
+getStudentInfo()
 getStudentClasses()
 function getStudentInfo() {
    
@@ -10,8 +10,7 @@ function getStudentInfo() {
         if (this.readyState == 4 && this.status == 200) {
             let user = JSON.parse(this.responseText)
                 
-        document.getElementById("studentName").innerHTML = user.firstName + " " + user.lastName
-        document.getElementById("classes").innerHTML = ""
+            document.getElementById("studentName").innerHTML = user.firstName + " " + user.lastName
         
         }
 
@@ -107,11 +106,9 @@ function todoQuizzes(){
     let xhr = new XMLHttpRequest();
     
     refresh()
-    console.log(courid)
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let quizzes = JSON.parse(this.response)
-            console.log(quizzes)
             Array.prototype.forEach.call(quizzes, function (quiz) {
                 document.getElementById("quizzes").innerHTML += 
                 `
@@ -135,7 +132,6 @@ function finishedQuizzes(){
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let quizzes = JSON.parse(this.response)
-            console.log(quizzes)
             Array.prototype.forEach.call(quizzes, function (quiz) {
                 document.getElementById("quizzes").innerHTML += 
                 `

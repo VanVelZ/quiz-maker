@@ -25,6 +25,7 @@ class Quiz {
 }
 function onLoads(){
     teacherId = getCookie("userId")
+    getTeacherInfo()
     getCourses()
 }
 function getCourses(){
@@ -40,6 +41,7 @@ function getCourses(){
                     <option value=${course.coursesId}>${course.name}</option>
                 `
             });
+            
         } 
     }
 
@@ -49,6 +51,32 @@ function getCourses(){
 
     xhr.send()
 }
+
+function getTeacherInfo() {
+   
+    thisUserId = getCookie('userId')
+
+        let xhttp = new XMLHttpRequest();
+         xhttp.onreadystatechange = function () {
+
+        if (this.readyState == 4 && this.status == 200) {
+            let user = JSON.parse(this.responseText)
+                
+        document.getElementById("teacherName").innerHTML = user.firstName + " " + user.lastName
+        }
+
+    }
+
+
+
+    url = url = "http://127.0.0.1:5000/user/" + thisUserId
+
+    xhttp.open("GET", url, true)
+    xhttp.send()
+
+}
+
+
 function submitQuiz(){
         let quizName = document.getElementById("quizName").value
         let courseId = document.getElementById("courseSelect").value
