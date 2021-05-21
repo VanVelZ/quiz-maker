@@ -5,6 +5,7 @@ from time import sleep
 
 from selenium.webdriver.common.keys import Keys
 
+
 @given(u'The User is logged in')
 def step_impl(context):
     raise NotImplementedError(u'STEP: Given The User is logged in')

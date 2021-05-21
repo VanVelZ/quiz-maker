@@ -1,14 +1,10 @@
 Feature: The User takes the test
 
-    Scenario: The User navigates to the test
+    Scenario: The User takes a test
         Given The User is logged in
-        When The User clicks a test
-        Then The User views the test
-
-    Scenario: The User takes the test
-        Given The User is viewing the test
-        When The User answers the questions
-        And The User clicks on the submit button
-        Then The User views their score
+        When The user selects a course
+        And The User clicks a test
+        And The User answers the question
+        Then The User views the test results
 
 
