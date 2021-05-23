@@ -26,3 +26,7 @@ class AnswerTest(unittest.TestCase):
         new_answer = answer_dao.create_answer(
             test_answer, test_question.id, False)
         assert new_answer == True
+
+
+if __name__ == "__main__":
+    unittest.main()

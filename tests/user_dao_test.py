@@ -31,13 +31,12 @@ class UserTest(unittest.TestCase):
         test_user.first_name = "NewName"
         test_user.last_name = "NewLastName"
         test_user.password = "NewPassword"
-        test_user.users_id = 12  # THIS IS THE TEST USER IN MY OWN DB
+        test_user.users_id = 13  # THIS IS THE TEST USER IN MY OWN DB
         updated_user = user_dao.update_user(test_user)
         assert updated_user.first_name == test_user.first_name
         assert updated_user.last_name == test_user.last_name
         assert updated_user.password == test_user.password
 
     def test_delete_user(self):
-        test_user.users_id = 11  # THIS IS THE TEST USER IN MY OWN DB
         result = user_dao.delete_user(test_user.users_id)
         assert result == True

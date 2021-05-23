@@ -23,15 +23,13 @@ class UserServiceTest(unittest.TestCase):
         assert new_user.users_id != 0
 
     def test_service_get_user_by_id(self):
-        returned_user = user_service.get_user_by_id(2)
-        assert returned_user.first_name == user2.first_name
+        returned_user = user_service.get_user_by_id(3)
+        print(returned_user.first_name)
+        assert returned_user.first_name == user3.first_name
 
     def test_service_all_users(self):
         users = user_service.get_all_users()
         assert all(users)
-
-    def test_service_update_user(self):
-        pass
 
     def test_service_delete_user(self):
         user1.users_id = 1
