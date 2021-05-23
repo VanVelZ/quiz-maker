@@ -14,7 +14,7 @@ def route(app):
     def get_quiz(id):
         return jsonify(QuizService.get_quiz(id))
 
-    @app.route("/quiz/", methods=["PUT"])
+    @app.route("/quiz/", methods=["POST"])
     def create_quiz():
         quiz = Quizzes.json_parse(request.json)
         if QuizService.create_quiz(quiz):

@@ -96,7 +96,7 @@ function submitQuiz(){
 
     let url  = "http://127.0.0.1:5000/quiz/"
 
-    xhttp.open("PUT", url, true)
+    xhttp.open("POST", url, false)
     xhttp.setRequestHeader('Content-type','application/json')
     xhttp.send(json)
 
