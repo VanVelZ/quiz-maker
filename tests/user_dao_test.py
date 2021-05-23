@@ -38,5 +38,6 @@ class UserTest(unittest.TestCase):
         assert updated_user.password == test_user.password
 
     def test_delete_user(self):
+        test_user.users_id = 15  # THIS IS THE TEST USER IN MY OWN DB
         result = user_dao.delete_user(test_user.users_id)
         assert result == True
